@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24c3946acc997e3f3eca7fc5c99585b2",
+    "hash": "f38f791477abd69ada8729cc4920d094",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -221,6 +221,52 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -822,6 +868,65 @@
                 "php"
             ],
             "time": "2015-01-18 11:29:59"
+        },
+        {
+            "name": "patricktalmadge/bootstrapper",
+            "version": "5.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/patricktalmadge/bootstrapper.git",
+                "reference": "0c5d5199c887f8a730899963be37a055d1d5ba29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/0c5d5199c887f8a730899963be37a055d1d5ba29",
+                "reference": "0c5d5199c887f8a730899963be37a055d1d5ba29",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~4.2||~5",
+                "illuminate/html": "~4.2||~5",
+                "illuminate/routing": "~4.2||~5",
+                "illuminate/support": "~4.2||~5",
+                "php": ">=5.4.0",
+                "twbs/bootstrap": "~3"
+            },
+            "require-dev": {
+                "akeneo/phpspec-skip-example-extension": "~1.1",
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "~2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bootstrapper\\": "src\\Bootstrapper",
+                    "DummyClasses\\": "tests\\DummyClasses"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                },
+                {
+                    "name": "Patrick Talmadge",
+                    "email": "ptalmadge@gmail.com"
+                },
+                {
+                    "name": "Patrick Rose",
+                    "email": "pjr0911025@gmail.com"
+                }
+            ],
+            "description": "Twitter Bootstrap markup generator",
+            "keywords": [
+                "bootstrap",
+                "laravel"
+            ],
+            "time": "2015-02-28 17:09:35"
         },
         {
             "name": "psr/log",
@@ -1677,6 +1782,57 @@
             "time": "2015-02-02 16:32:08"
         },
         {
+            "name": "twbs/bootstrap",
+            "version": "v3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "bcf7dd38b5ab180256e2e4fb5da0369551b3f082"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/bcf7dd38b5ab180256e2e4fb5da0369551b3f082",
+                "reference": "bcf7dd38b5ab180256e2e4fb5da0369551b3f082",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2015-01-19 17:03:09"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.1.0",
             "source": {
@@ -1729,6 +1885,69 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "barryvdh/laravel-ide-helper",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-ide-helper.git",
+                "reference": "81b7febfc64168ea1af57261aa4dfc9acefd5429"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/81b7febfc64168ea1af57261aa4dfc9acefd5429",
+                "reference": "81b7febfc64168ea1af57261aa4dfc9acefd5429",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.0.x",
+                "illuminate/filesystem": "5.0.x",
+                "illuminate/support": "5.0.x",
+                "php": ">=5.4.0",
+                "phpdocumentor/reflection-docblock": "2.0.x",
+                "symfony/class-loader": "~2.3"
+            },
+            "require-dev": {
+                "doctrine/dbal": "~2.3"
+            },
+            "suggest": {
+                "doctrine/dbal": "Load information from the database about models for phpdocs (~2.3)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\LaravelIdeHelper\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Laravel IDE Helper, generates correct PHPDocs for all Facade classes, to improve auto-completion.",
+            "keywords": [
+                "autocomplete",
+                "codeintel",
+                "helper",
+                "ide",
+                "laravel",
+                "netbeans",
+                "phpdoc",
+                "phpstorm",
+                "sublime"
+            ],
+            "time": "2015-02-23 15:55:54"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.4",
@@ -2742,6 +2961,56 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2014-12-15 14:25:24"
+        },
+        {
+            "name": "symfony/class-loader",
+            "version": "v2.6.4",
+            "target-dir": "Symfony/Component/ClassLoader",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/ClassLoader.git",
+                "reference": "deac802f76910708ab50d039806cfd1866895b52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/deac802f76910708ab50d039806cfd1866895b52",
+                "reference": "deac802f76910708ab50d039806cfd1866895b52",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/finder": "~2.0,>=2.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\ClassLoader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony ClassLoader Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-01-05 14:28:40"
         },
         {
             "name": "symfony/yaml",

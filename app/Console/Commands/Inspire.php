@@ -1,4 +1,4 @@
-<?php namespace App\Console\Commands;
+<?php namespace BoardSoc\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace BoardSoc\Commands;
 
 abstract class Command {
 

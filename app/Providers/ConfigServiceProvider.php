@@ -1,4 +1,4 @@
-<?php namespace App\Providers;
+<?php namespace BoardSoc\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

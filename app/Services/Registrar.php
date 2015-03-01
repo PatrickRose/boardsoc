@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace BoardSoc\Services;
 
-use App\User;
+use BoardSoc\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
