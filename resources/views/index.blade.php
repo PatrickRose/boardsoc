@@ -22,7 +22,8 @@
             <p>
                 BoardSoc is a student society of the University of Sheffield,
                 focused on playing modern(ish) board games. Interested in
-                more information? Then read more here!
+                more information? Then
+                {!! link_to_route('about', 'read more here') !!}!
             </p>
         </div>
         <div class="col-md-4">
@@ -43,8 +44,8 @@
             </h2>
             <p>
                 A member of the society can borrow any game from our library
-                for a small deposit. If you're interested, take a look at the
-                games we have available.
+                for a small deposit. If you're interested,
+                {!! link_to_route('library.index', 'take a look at the games we have available') !!}.
             </p>
         </div>
     </div>
