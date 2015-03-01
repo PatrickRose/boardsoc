@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"patricktalmadge/bootstrapper": "~5.5"
+		"patricktalmadge/bootstrapper": "~5.5",
+		"codeception/codeception": "~2.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

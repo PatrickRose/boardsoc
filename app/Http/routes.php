@@ -11,5 +11,25 @@
 |
 */
 
-Route::get('/', 'StaticPagesController@index');
-Route::get('about', 'StaticPagesController@index');
+Route::get(
+    '/',
+    [
+        'as' => 'home',
+        'uses' => 'StaticPagesController@index'
+    ]
+);
+Route::get(
+    'about',
+    [
+        'as' => 'about',
+        'uses' => 'StaticPagesController@about'
+    ]
+);
+Route::resource(
+    'events',
+    'EventsController@index'
+);
+Route::resource(
+    'library',
+    'LibraryController'
+);

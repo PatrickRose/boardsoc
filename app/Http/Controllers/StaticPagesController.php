@@ -4,6 +4,7 @@ use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use View;
 
 class StaticPagesController extends Controller {
 
@@ -14,6 +15,16 @@ class StaticPagesController extends Controller {
 	 */
 	public function index()
 	{
-        return \View::make('index');
+        return View::make('index');
 	}
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function about()
+    {
+        return View::make('about');
+    }
 }
