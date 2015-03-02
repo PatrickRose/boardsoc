@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Laracasts\Flash\FlashNotifier;
 
 class Authenticate {
 
@@ -11,17 +12,22 @@ class Authenticate {
 	 * @var Guard
 	 */
 	protected $auth;
+    /**
+     * @var FlashNotifier
+     */
+    private $flashNotifier;
 
-	/**
+    /**
 	 * Create a new filter instance.
 	 *
 	 * @param  Guard  $auth
 	 * @return void
 	 */
-	public function __construct(Guard $auth)
+	public function __construct(Guard $auth, FlashNotifier $flashNotifier)
 	{
 		$this->auth = $auth;
-	}
+        $this->flashNotifier = $flashNotifier;
+    }
 
 	/**
 	 * Handle an incoming request.
@@ -40,6 +46,7 @@ class Authenticate {
 			}
 			else
 			{
+                $this->flashNotifier->info('You must log in to do that');
 				return redirect()->guest('auth/login');
 			}
 		}

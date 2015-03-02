@@ -148,6 +148,7 @@ return [
 
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Bootstrapper\\BootstrapperL5ServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
 	],
 
 	/*
@@ -220,5 +221,6 @@ return [
         'Table' => 'Bootstrapper\Facades\Table',
         'Thumbnail' => 'Bootstrapper\Facades\Thumbnail',
 
-]
+        'Flash' => 'Laracasts\Flash\Flash',
+    ]
 ];

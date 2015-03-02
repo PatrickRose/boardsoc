@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'BoardSoc\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'BoardSoc\Http\Middleware\RedirectIfAuthenticated',
+        'auth.admin' => 'BoardSoc\Http\Middleware\AuthenticateAdmin',
 	];
 
 }

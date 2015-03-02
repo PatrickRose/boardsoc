@@ -33,3 +33,12 @@ Route::resource(
     'library',
     'LibraryController'
 );
+Route::resource(
+    'admin',
+    'AdminController'
+);
+Route::controller(
+    'auth',
+    'SessionsController'
+);
+Route::resource('users', 'UsersController');
