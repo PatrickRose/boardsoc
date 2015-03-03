@@ -99,4 +99,27 @@ class AuthenticationCest
             'email' => 'jack@example.com'
         ]);
     }
+
+    public function loginFromTheMainPage(FunctionalTester $I)
+    {
+        $I->am('a committee member');
+        $I->amGoingTo('log in');
+        $I->lookForwardTo('logging in');
+
+        $I->amOnRoute('home');
+        $I->submitForm('.login', [
+            'email' => $this->committeeUser->email,
+            'password' => 'admin'
+        ]);
+        $I->seeAuthentication();
+    }
+
+    public function logoutFromAnyPage(FunctionalTester $I)
+    {
+        $I->amLoggedAs($this->committeeUser);
+
+        $I->amOnRoute('home');
+        $I->click('Log out');
+        $I->dontSeeAuthentication();
+    }
 }

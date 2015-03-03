@@ -149,6 +149,7 @@ return [
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Bootstrapper\\BootstrapperL5ServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
+        'BoardSoc\Providers\ViewSharingProvider',
 	],
 
 	/*

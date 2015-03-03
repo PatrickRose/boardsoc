@@ -5,31 +5,36 @@
 </head>
 <body>
 {!! Navbar::withBrand('BoardSoc')
-    ->withContent( Navigation::links([
-        [
-            'title' => 'Home',
-            'link' => route('home'),
-        ],
-        [
-            'title' => 'About',
-            'link' => route('about'),
-        ],
-        [
-            'title' => 'Events',
-            'link' => route('events.index'),
-        ],
-        [
-            'title' => 'Library',
-            'link' => route('library.index'),
-        ],
-        [
-            'title' => 'Admin',
-            'link' => route('admin.index'),
-            'callback' => function() {
-                return Auth::check() && Auth::user()->is_committee;
-            }
-        ],
-])) !!}
+    ->withContent(
+        Navigation::links([
+            [
+                'title' => 'Home',
+                'link' => route('home'),
+            ],
+            [
+                'title' => 'About',
+                'link' => route('about'),
+            ],
+            [
+                'title' => 'Events',
+                'link' => route('events.index'),
+            ],
+            [
+                'title' => 'Library',
+                'link' => route('library.index'),
+            ],
+            [
+                'title' => 'Admin',
+                'link' => route('admin.index'),
+                'callback' => function() {
+                    return Auth::check() && Auth::user()->is_committee;
+                }
+            ],
+        ])
+    )
+    ->withContent(
+         $loginFormOrLogoutLink
+    )!!}
 
 <div class="container">
     @if (Session::has('flash_notification.message'))
