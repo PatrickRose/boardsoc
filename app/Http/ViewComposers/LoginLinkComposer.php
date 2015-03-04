@@ -29,7 +29,7 @@ class LoginLinkComposer
                 'email',
                 null,
                 [
-                    'placeholder' => 'email'
+                    'placeholder' => 'Email...'
                 ]
             );
             $loginForm .= '</div>';
@@ -45,7 +45,7 @@ class LoginLinkComposer
                 'password',
                 null,
                 [
-                    'placeholder' => 'password'
+                    'placeholder' => 'Password...'
                 ]
             );
             $loginForm .= '</div>';

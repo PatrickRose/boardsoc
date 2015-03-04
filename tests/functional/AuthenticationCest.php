@@ -1,25 +1,15 @@
 <?php
+
+require_once __DIR__ . '/UserTests.php';
+
 use \FunctionalTester;
 
-class AuthenticationCest
+class AuthenticationCest extends UserTests
 {
-    protected $committeeUser;
-    protected $user;
 
     public function _before(FunctionalTester $I)
     {
-        $committeeUser = \BoardSoc\User::create([
-            'email' => 'admin@example.com',
-            'password' => 'admin',
-        ]);
-        $committeeUser->is_committee = true;
-        $this->committeeUser = $committeeUser;
-
-        $user = \BoardSoc\User::create([
-            'email' => 'user@example.com',
-            'password' => 'user',
-        ]);
-        $this->user = $user;
+        $this->createUsers();
     }
 
     public function seeCommitteePage(FunctionalTester $I)
@@ -81,6 +71,13 @@ class AuthenticationCest
         ]);
     }
 
+    public function getAskedToLogIn(FunctionalTester $I)
+    {
+        $I->amOnRoute('users.create');
+
+        $I->seeIAmAskedToLogIn();
+    }
+
     public function getValidationErrors(FunctionalTester $I)
     {
         $I->am('a committee member');
@@ -98,6 +95,14 @@ class AuthenticationCest
             'name' => 'Jack Doe',
             'email' => 'jack@example.com'
         ]);
+    }
+
+    public function getToldIDontHavePermission(FunctionalTester $I)
+    {
+        $I->amLoggedAs($this->user);
+
+        $I->amOnRoute('users.create');
+        $I->seeCurrentUrlEquals('');
     }
 
     public function loginFromTheMainPage(FunctionalTester $I)

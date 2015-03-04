@@ -1,20 +1,31 @@
 <?php namespace BoardSoc\Http\Controllers;
 
+use BoardSoc\Event;
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
 
+use BoardSoc\Http\Requests\CreateEvents;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller {
 
-	/**
+    function __construct()
+    {
+        $this->middleware('auth.admin', ['only' => ['create', 'store']]);
+    }
+
+
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
+        $events = Event::where('date', '>', Carbon::now())->paginate(12);
+
+        return \View::make('events.index')->with('events', $events);
 	}
 
 	/**
@@ -24,17 +35,22 @@ class EventsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        return \View::make('events.create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CreateEvents $events
+     * @return Response
+     */
+	public function store(CreateEvents $events)
 	{
-		//
+		$event = Event::create($events->all());
+
+        \Flash::success("'{$event->name}' created");
+
+        return \Redirect::route('admin.index');
 	}
 
 	/**
@@ -45,7 +61,9 @@ class EventsController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $event = Event::findOrFail($id);
+
+        return \View::make('events.view')->with('event', $event);
 	}
 
 	/**

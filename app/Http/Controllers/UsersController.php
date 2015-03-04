@@ -21,6 +21,9 @@ class UsersController extends Controller {
     function __construct(Redirector $redirector)
     {
         $this->redirector = $redirector;
+
+        $this->middleware('auth.admin', ['only' => ['create', 'store']]);
+
     }
 
     /**
@@ -40,8 +43,6 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-        $this->middleware('auth.admin');
-
         return View::make('users.create');
 	}
 
@@ -53,7 +54,7 @@ class UsersController extends Controller {
      */
 	public function store(SignUpUsers $signUpUsers)
 	{
-        $user = User::create(\Input::all());
+        $user = User::create($signUpUsers->all());
         $user->setPasswordAttribute(str_random(8));
 
         \Flash::info('User created');

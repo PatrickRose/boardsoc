@@ -1,8 +1,10 @@
 <?php namespace BoardSoc\Http\Controllers;
 
+use BoardSoc\Event;
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use View;
 
@@ -15,7 +17,9 @@ class StaticPagesController extends Controller {
 	 */
 	public function index()
 	{
-        return View::make('index');
+        $events = Event::where('date', '>', Carbon::now())->limit(1)->get();
+
+        return View::make('index')->with('events', $events);
 	}
 
     /**

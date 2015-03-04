@@ -25,14 +25,8 @@ Route::get(
         'uses' => 'StaticPagesController@about'
     ]
 );
-Route::resource(
-    'events',
-    'EventsController@index'
-);
-Route::resource(
-    'library',
-    'LibraryController'
-);
+Route::resource('events', 'EventsController');
+Route::resource('library', 'LibraryController');
 Route::resource(
     'admin',
     'AdminController'
