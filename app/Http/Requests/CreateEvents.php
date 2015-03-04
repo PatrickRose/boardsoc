@@ -25,6 +25,7 @@ class CreateEvents extends Request {
 		return [
             'name' => 'required',
             'date' => 'required|after:' . Carbon::now(),
+            'details' => 'required',
             'facebook' => 'required|unique:events'
 		];
 	}

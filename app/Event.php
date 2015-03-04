@@ -38,7 +38,7 @@ class Event extends Model {
 
     public function getParagraphs()
     {
-        return explode('\n\n', $this->details);
+        return explode("\n\n", $this->details);
     }
 
 }

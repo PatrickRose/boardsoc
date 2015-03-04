@@ -13,6 +13,10 @@
         </small>
     </h1>
 
+    @if(Auth::check() && Auth::user()->is_committee)
+        {!! link_to_route('events.edit', 'Edit Event', ['event' => $event]) !!}
+    @endif
+
     @foreach($event->getParagraphs() as $paragraph)
         <p>
             {{ $paragraph }}

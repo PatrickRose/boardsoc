@@ -1,15 +1,15 @@
 @extends('base.standard')
 
 @section('title')
-    Create new Event
+    Edit Event
 @endsection
 
 @section('content')
     <h1>
-        Create new event
+        Edit event
     </h1>
 
-    {!! Form::model($event, ['route' => 'events.store']) !!}
+    {!! Form::model($event, ['route' => ['events.update', $event->id]]) !!}
 
     {!! ControlGroup::generate(
         Form::label('name', 'Event name'),
@@ -32,7 +32,7 @@
         'This is the ID after the event: https://www.facebook.com/events/{value}'
     ) !!}
 
-    {!! Form::submit('Create Event') !!}
+    {!! Form::submit('Edit Event') !!}
 
     {!! Form::close() !!}
 @endsection

@@ -125,4 +125,43 @@ class EventsCest extends UserTests
         );
         return array($eventOne, $eventTwo, $eventThree);
     }
+
+    public function checkThatDoubleNewLinesAreParagraphs(FunctionalTester $I)
+    {
+        $faker = Factory::create();
+
+        $paragraphs = $faker->paragraphs(3);
+
+        $event = Event::create(
+            [
+                'name' => $faker->sentence(),
+                'date' => \Carbon\Carbon::tomorrow()->addMonth(),
+                'details' => implode("\n\n", $paragraphs),
+                'facebook' => $faker->randomNumber(),
+            ]
+        );
+
+        $I->amOnRoute('events.show', ['event' => $event->id]);
+        foreach($paragraphs as $index => $paragraph)
+        {
+            $I->see($paragraph, 'p');
+            $I->dontSee(implode("\n\n", $paragraphs), 'p');
+        }
+    }
+
+    public function seeAnEditLinkOnEventPages(FunctionalTester $I)
+    {
+        list($eventOne, $eventTwo, $eventThree) = $this->createThreeEvents();
+
+        $I->amLoggedAs($this->committeeUser);
+        $I->amOnRoute('events.show', ['event' => $eventOne->id]);
+        $I->click('Edit Event');
+
+        $I->seeCurrentRouteIs('events.edit', ['event' => $eventOne->id]);
+        $I->fillField('name', 'Edited name');
+        $I->click('Edit Event');
+
+        $I->seeCurrentRouteIs('events.show', ['event' => $eventOne->id]);
+        $I->see('Edited name');
+    }
 }
