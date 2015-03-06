@@ -61,13 +61,13 @@ class AuthenticationCest extends UserTests
         $I->amOnRoute('admin.index');
         $I->click('Sign someone up');
         $I->fillField('name', 'Jack Doe');
-        $I->fillField('email', 'jack@example.com');
+        $I->fillField('email', 'pjr0911025@googlemail.com');
         $I->click('Sign them up');
 
         $I->see('User created');
         $I->seeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'jack@example.com'
+            'email' => 'pjr0911025@googlemail.com'
         ]);
     }
 
@@ -93,7 +93,7 @@ class AuthenticationCest extends UserTests
         $I->dontSee('User created');
         $I->dontSeeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'jack@example.com'
+            'email' => 'pjr0911025@googlemail.com'
         ]);
     }
 
@@ -124,7 +124,7 @@ class AuthenticationCest extends UserTests
         $I->amLoggedAs($this->committeeUser);
 
         $I->amOnRoute('home');
-        $I->click('Log out');
+        $I->click('Log Out');
         $I->dontSeeAuthentication();
     }
 }

@@ -53,15 +53,16 @@ class LoginLinkComposer
             $loginForm .= \Form::submit('Log in');
             $loginForm .= \Form::close();
         } else {
-            $logoutLink = '<div class="navbar-right">' .
-                \Button::asLinkTo(url('auth/logout'))
-                    ->addClass(
-                        [
-                            'navbar-btn',
-                            'navbar-left'
-                        ]
-                    )->withValue('Log out') .
-                '</div>';
+            $logoutLink = \Navigation::links([
+                [
+                    'title' => 'My Details',
+                    'link' => route('users.edit', ['user' => \Auth::user()]),
+                ],
+                [
+                    'title' => 'Log Out',
+                    'link' => url('auth/logout'),
+                ],
+            ])->withAttributes(['class' => 'navbar-right']);
         }
 
         $view->with(
