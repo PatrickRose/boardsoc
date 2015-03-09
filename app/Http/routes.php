@@ -27,12 +27,6 @@ Route::get(
 );
 Route::resource('events', 'EventsController');
 Route::resource('library', 'LibraryController');
-Route::resource(
-    'admin',
-    'AdminController'
-);
-Route::controller(
-    'auth',
-    'SessionsController'
-);
+Route::resource('admin', 'AdminController');
+Route::controller('auth', 'SessionsController');
 Route::resource('users', 'UsersController');

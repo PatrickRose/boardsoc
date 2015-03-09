@@ -10,7 +10,7 @@ abstract class UserTests
     {
         $committeeUser = \BoardSoc\User::create(
             [
-                'email' => 'admin@example.com',
+                'email' => 'pjr0911025@gmail.com',
                 'password' => 'admin',
             ]
         );

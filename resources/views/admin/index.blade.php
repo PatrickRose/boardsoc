@@ -24,5 +24,12 @@
 
             {!! link_to_route('events.create', 'Create new event') !!}
         </div>
+        <div class="col-md-4">
+            <h2 class="page-header">
+                Library Admin
+            </h2>
+
+            {!! link_to_route('library.create', 'Add game to library') !!}
+        </div>
     </div>
 @endsection
