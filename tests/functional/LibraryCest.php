@@ -7,11 +7,21 @@ require_once('UserTests.php');
 class LibraryCest extends UserTests
 {
 
+    /**
+     * @var BoardSoc\BoardGameGeekGame[]
+     */
     protected $games = [];
+
+    /**
+     * @var BoardSoc\Game[]
+     */
+    protected $libraryGames;
 
     public function _before(FunctionalTester $I)
     {
         $this->createUsers();
+        $this->games = [];
+        $this->libraryGames = [];
     }
 
     public function addSomethingToTheLibrary(FunctionalTester $I)
@@ -65,25 +75,26 @@ class LibraryCest extends UserTests
         $I->seeCurrentUrlEquals('');
     }
 
-//    public function canLoanAGameFromTheLibrary(FunctionalTester $I)
-//    {
-//        $this->createLibraryGames(1);
-//
-//        $I->amLoggedAs($this->user);
-//        $I->amOnRoute('library.index');
-//        $I->click('Loan this game');
-//
-//        $I->seeRecord('loans', [
-//            'user_id' => $this->user->id,
-//            'game_id' => 1,
-//            'date_until' => null
-//        ]);
-//
-//        $I->see('Game loaned!');
-//        $I->see('You have requested this game...');
-//        $I->see('This loan will time out in ' .
-//            \Carbon\Carbon::now()->addWeeks(2)->diffForHumans());
-//    }
+    public function canLoanAGameFromTheLibrary(FunctionalTester $I)
+    {
+        $this->createLibraryGames(1);
+
+        $I->amLoggedAs($this->user);
+        $I->amOnRoute('library.index');
+        $I->click('Loan this game');
+
+        $I->seeRecord('loans', [
+            'user_id' => $this->user->id,
+            'game_id' => $this->libraryGames[0]->id,
+            'date_until' => null,
+        ]);
+
+        $I->see('Game loaned!');
+        $I->see('You have requested this game...');
+        $I->see('This loan will time out in ' .
+            \Carbon\Carbon::now()->addWeeks(2)->diffForHumans()
+        );
+    }
 
     private function createLibraryGames($number = 3)
     {
@@ -99,6 +110,7 @@ class LibraryCest extends UserTests
             $libraryGame->save();
 
             $this->games[] = $game;
+            $this->libraryGames[] = $libraryGame;
         }
     }
 }

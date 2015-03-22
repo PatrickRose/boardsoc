@@ -23,6 +23,14 @@
                     <img src="{{ $game->boardGameGeekGame->image }}"
                          width="100%">
 
+                    @if(!$game->isOnLoan())
+                        {!! link_to_route('loan.create', 'Loan this game', ['library' => $game]) !!}
+                    @elseif($game->isLoanedTo(Auth::user()))
+                        You have requested this game...
+
+                        {{ $game->lastLoan()->loanFinishText() }}
+                    @endif
+
                 </div>
             @endforeach
 

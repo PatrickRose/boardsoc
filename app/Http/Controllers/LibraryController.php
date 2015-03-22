@@ -8,6 +8,7 @@ use BoardSoc\Http\Controllers\Controller;
 use BoardSoc\Http\Requests\AddGameToLibrary;
 use BoardSoc\Repositories\BoardGameGeekRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LibraryController extends Controller {
 
@@ -29,7 +30,9 @@ class LibraryController extends Controller {
 	 */
 	public function index()
 	{
-        $games = Game::with('boardGameGeekGame')->get();
+        $games = Game::with('boardGameGeekGame')
+            ->with('loans')
+            ->get();
 
 		return \View::make('library.index', compact('games'));
 	}
@@ -63,6 +66,22 @@ class LibraryController extends Controller {
         \Flash::success('Game added to library');
         return \Redirect::route('admin.index');
 	}
+
+    public function loan($id)
+    {
+        $game = Game::findOrFail($id);
+
+        if ($game->loanTo(Auth::user()))
+        {
+            \Flash::success('Game loaned!');
+        }
+        else
+        {
+            \Flash::error('Game was not loaned!');
+        }
+
+        return \Redirect::route('library.index');
+    }
 
 	/**
 	 * Display the specified resource.

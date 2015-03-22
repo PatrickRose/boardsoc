@@ -30,3 +30,10 @@ Route::resource('library', 'LibraryController');
 Route::resource('admin', 'AdminController');
 Route::controller('auth', 'SessionsController');
 Route::resource('users', 'UsersController');
+Route::get(
+    'library/{library}/loan',
+    [
+        'as' => 'loan.create',
+        'uses' => 'LibraryController@loan'
+    ]
+);
