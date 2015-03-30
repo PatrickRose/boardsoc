@@ -8,13 +8,14 @@ abstract class UserTests
 
     protected function createUsers()
     {
-        $committeeUser = \BoardSoc\User::create(
+        $committeeUser = new \BoardSoc\User(
             [
                 'email' => 'pjr0911025@gmail.com',
                 'password' => 'admin',
             ]
         );
         $committeeUser->is_committee = true;
+        $committeeUser->save();
         $this->committeeUser = $committeeUser;
 
         $user = \BoardSoc\User::create(

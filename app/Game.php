@@ -72,9 +72,8 @@ class Game extends Model {
         $loan->game_id = $this->id;
         $loan->user_id = $user->id;
         $loan->date_until = null;
-        $result = $loan->save();
 
-        return $result;
+        return $loan->save() ? $loan : null;
     }
 
     public function loans()

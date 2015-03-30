@@ -1,5 +1,6 @@
 <?php namespace BoardSoc;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -34,6 +35,18 @@ class Loan extends Model {
 
 
         return "This loan will $expireFinish in " . $endDate->diffForHumans();
+    }
+
+    public function hasBeenConfirmed()
+    {
+        return !is_null($this->date_until);
+    }
+
+    public function confirm()
+    {
+        $this->date_until = Carbon::now()->addWeeks(2);
+
+        return $this->save();
     }
 
 }

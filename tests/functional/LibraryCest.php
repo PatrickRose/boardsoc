@@ -75,7 +75,7 @@ class LibraryCest extends UserTests
         $I->seeCurrentUrlEquals('');
     }
 
-    public function canLoanAGameFromTheLibrary(FunctionalTester $I)
+    public function loanAGameFromTheLibrary(FunctionalTester $I)
     {
         $this->createLibraryGames(1);
 
@@ -91,9 +91,41 @@ class LibraryCest extends UserTests
 
         $I->see('Game loaned!');
         $I->see('You have requested this game...');
-        $I->see('This loan will time out in ' .
-            \Carbon\Carbon::now()->addWeeks(2)->diffForHumans()
-        );
+        $I->see('This loan will time out in');
+    }
+
+    public function canCompleteTheLoan(FunctionalTester $I)
+    {
+        $this->createLibraryGames(1);
+        $loan = $this->libraryGames[0]->loanTo($this->user);
+        $attributes = $loan->attributesToArray();
+        $I->amLoggedAs($this->committeeUser);
+
+        $I->seeRecord('loans', $attributes);
+        $I->amOnRoute('loan.confirm', ['loan' => $loan]);
+        $I->dontSeeRecord('loans', $attributes);
+
+        unset($attributes['date_until']);
+        $I->seeRecord('loans', $attributes);
+    }
+
+    public function getAskedToLogInWhenConfirmingALoan(FunctionalTester $I)
+    {
+        $this->createLibraryGames(1);
+        $loan = $this->libraryGames[0]->loanTo($this->user);
+        $I->amOnRoute('loan.confirm', ['loan' => $loan]);
+
+        $I->seeIAmAskedToLogIn();
+    }
+
+    public function getErrorsWhenCompletingALoanWhenNotAdmin(FunctionalTester $I)
+    {
+        $this->createLibraryGames(1);
+        $loan = $this->libraryGames[0]->loanTo($this->user);
+        $I->amLoggedAs($this->user);
+        $I->amOnRoute('loan.confirm', ['loan' => $loan]);
+
+        $I->seeCurrentUrlEquals('');
     }
 
     private function createLibraryGames($number = 3)

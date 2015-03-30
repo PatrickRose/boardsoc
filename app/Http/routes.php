@@ -37,3 +37,10 @@ Route::get(
         'uses' => 'LibraryController@loan'
     ]
 );
+Route::get(
+    'library/loan/{loan}/confirm',
+    [
+        'as' => 'loan.confirm',
+        'uses' => 'LibraryController@confirm'
+    ]
+);
