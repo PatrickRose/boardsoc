@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-4">
             <h2 class="page-header">
-                Sign up new user
+                Create new event
             </h2>
 
             {!! link_to_route('events.create', 'Create new event') !!}

@@ -15,6 +15,7 @@
             Come along to our events
         </p>
     </div>
+
     <div class="row">
         <div class="col-md-4">
             <h2 class="page-header">

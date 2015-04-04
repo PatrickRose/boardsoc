@@ -2,6 +2,7 @@
 <head>
     <title>@yield('title') - BoardSoc</title>
     {!! Helpers::css() !!}
+    <link rel="stylesheet" href="{{ asset('app.css')}}">
 </head>
 <body>
 {!! Navbar::withBrand('BoardSoc')
@@ -55,5 +56,6 @@
     @yield('content')
 </div>
 {!! Helpers::js() !!}
+<script src="{{ asset('search.js') }}"></script>
 </body>
 </html>

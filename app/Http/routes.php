@@ -44,3 +44,11 @@ Route::get(
         'uses' => 'LibraryController@confirm'
     ]
 );
+
+Route::get(
+    'games/search/{search}',
+    [
+        'as' => 'games.search',
+        'uses' => 'GamesController@search',
+    ]
+);

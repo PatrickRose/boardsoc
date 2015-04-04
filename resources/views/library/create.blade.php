@@ -10,6 +10,20 @@
         Add Game To Library
     </h1>
 
+    <div class="row">
+        <div class="search-form">
+            <div class="results">
+            </div>
+            <input type="text" class="search">
+            <button class="submit btn btn-default"
+                    data-loading-text="Searching..."
+                    data-url="{{ route('games.search', ['search' => '']) }}"
+                    autocomplete="off">
+                <span class="glyphicon glyphicon-search" /> Search
+            </button>
+        </div>
+    </div>
+
     {!! Form::open(['route' => 'library.store']) !!}
 
     {!! ControlGroup::generate(
@@ -21,6 +35,10 @@
         Form::label('deposit', 'Deposit (in pounds)'),
         Form::number('deposit')
     ) !!}
+
+    <div class="form-group">
+        {!! Form::submit('Save') !!}
+    </div>
 
     {!! Form::close() !!}
 
