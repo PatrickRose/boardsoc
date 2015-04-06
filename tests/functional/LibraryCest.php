@@ -54,9 +54,10 @@ class LibraryCest extends UserTests
         $this->createLibraryGames();
 
         $I->amOnRoute('library.index');
-        foreach($this->games as $game)
+        foreach($this->libraryGames as $game)
         {
-            $I->see($game->name);
+            $I->see($game->boardGameGeekGame->name);
+            $I->see($game->deposit);
         }
     }
 

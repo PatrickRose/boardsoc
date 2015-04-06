@@ -26,10 +26,6 @@ Route::get(
     ]
 );
 Route::resource('events', 'EventsController');
-Route::resource('library', 'LibraryController');
-Route::resource('admin', 'AdminController');
-Route::controller('auth', 'SessionsController');
-Route::resource('users', 'UsersController');
 Route::get(
     'library/{library}/loan',
     [
@@ -44,6 +40,10 @@ Route::get(
         'uses' => 'LibraryController@confirm'
     ]
 );
+Route::resource('library', 'LibraryController');
+Route::resource('admin', 'AdminController');
+Route::controller('auth', 'SessionsController');
+Route::resource('users', 'UsersController');
 
 Route::get(
     'games/search/{search}',
@@ -52,3 +52,21 @@ Route::get(
         'uses' => 'GamesController@search',
     ]
 );
+
+Route::post(
+    'users/{users}/games/boardgamegeek',
+    [
+        'as' => 'users.games.boardgamegeek',
+        'uses' => 'UserGamesController@boardgamegeek'
+    ]
+);
+
+Route::get(
+    'users/{users}/games/{games}/delete',
+    [
+        'as' => 'users.games.delete',
+        'uses' => 'UserGamesController@destroy'
+    ]
+);
+
+Route::resource('users.games', 'UserGamesController');

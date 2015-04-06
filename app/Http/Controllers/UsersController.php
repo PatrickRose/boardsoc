@@ -80,7 +80,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::with('games')->findOrFail($id);
+
+        return View::make('users.show', compact('user'));
     }
 
     /**

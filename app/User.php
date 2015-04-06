@@ -59,4 +59,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
     }
 
+    public function games()
+    {
+        return $this->belongsToMany('BoardSoc\\BoardGameGeekGame');
+    }
+
 }

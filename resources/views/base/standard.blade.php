@@ -3,6 +3,7 @@
     <title>@yield('title') - BoardSoc</title>
     {!! Helpers::css() !!}
     <link rel="stylesheet" href="{{ asset('app.css')}}">
+    <meta charset="UTF-8">
 </head>
 <body>
 {!! Navbar::withBrand('BoardSoc')

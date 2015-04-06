@@ -14,6 +14,8 @@ class BoardGameGeekRepository
     const BOARD_GAME_URL = "http://www.boardgamegeek.com/xmlapi/boardgame/";
 
     const SEARCH_GAMES = 'http://www.boardgamegeek.com/xmlapi/search';
+
+    const USER_GAMES = 'http://www.boardgamegeek.com/xmlapi/collection/';
     /**
      * @var Client
      */
@@ -141,6 +143,34 @@ class BoardGameGeekRepository
         $game->name = $this->getName($element->name);
         $game->save();
         return $game;
+    }
+
+    /**
+     * @param string $username
+     * @return \BoardSoc\BoardGameGeekGame[]|Collection
+     */
+    public function getUserGames($username)
+    {
+        $url = self::USER_GAMES . $username;
+
+        $req = $this->client->get($url);
+        $req->getQuery()->set('own', 1);
+
+        $res = $req->send();
+        $xml = $res->xml();
+
+        if (!count($xml->item))
+        {
+            return $this->getUserGames($username);
+        }
+
+        $ids = [];
+        foreach($xml->item as $item)
+        {
+            $ids[] = $item['objectid'];
+        }
+
+        return $this->getMany(array_unique($ids));
     }
 
 }

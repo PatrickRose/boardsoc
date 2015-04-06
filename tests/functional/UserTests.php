@@ -3,7 +3,14 @@
 abstract class UserTests
 {
 
+    /**
+     * @var BoardSoc\User
+     */
     protected $committeeUser;
+
+    /**
+     * @var BoardSoc\User
+     */
     protected $user;
 
     protected function createUsers()
