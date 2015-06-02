@@ -4,5 +4,57 @@
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
 
 body, label, .checkbox label {
-	font-weight: 300;
+  font-weight: 300;
+}
+
+.committee {
+  .committee-president, .committee-treasurer, .committee-secretary,
+  .committee-librarian, .committee-web, .committee-inclusions {
+    background-repeat: no-repeat;
+    @height: 390px;
+    .make-md-column(4, 10px);
+    -webkit-background-size: 100%;
+    background-size: 100% 100%;
+    height: @height;
+    border: solid grey 1px;
+    .committee-name {
+      margin-top: @height - 50;
+      background: fade(white, 50%);
+      color: black;
+      text-align: center;
+      small {
+        color: lighten(black, 10%);
+      }
+    }
+    @media(max-width: @screen-sm-max)
+    {
+      @height: 500px;
+      height: @height;
+      .committee-name {
+        margin-top: @height - 50;
+      }
+    }
+  }
+  .committee-president {
+    background-image: url('/img/committee-president.jpg');
+  }
+  .committee-treasurer {
+    background-image: url('/img/committee-treasurer.jpg') ;
+  }
+  .committee-secretary {
+    background-image: url('/img/committee-secretary.jpg');
+    @media (min-width: @screen-md-min) {
+      -webkit-background-size: initial;
+      background-size: initial;
+    }
+  }
+  .committee-librarian {
+    background-image: url('/img/committee-librarian.jpg');
+  }
+  .committee-web {
+    background-image: url('/img/committee-web.jpg')
+  }
+  .committee-inclusions {
+    background-image: url('/img/committee-inclusions.jpg')
+  }
 }

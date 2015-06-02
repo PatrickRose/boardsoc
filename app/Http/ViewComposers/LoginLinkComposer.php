@@ -55,6 +55,10 @@ class LoginLinkComposer
         } else {
             $logoutLink = \Navigation::links([
                 [
+                    'title' => 'My Games',
+                    'link' => route('users.show', ['user' => \Auth::user()]),
+                ],
+                [
                     'title' => 'My Details',
                     'link' => route('users.edit', ['user' => \Auth::user()]),
                 ],

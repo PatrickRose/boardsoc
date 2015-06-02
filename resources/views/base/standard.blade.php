@@ -2,7 +2,7 @@
 <head>
     <title>@yield('title') - BoardSoc</title>
     {!! Helpers::css() !!}
-    <link rel="stylesheet" href="{{ asset('app.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <meta charset="UTF-8">
 </head>
 <body>
