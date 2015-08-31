@@ -26,6 +26,10 @@
                 'link' => route('library.index'),
             ],
             [
+                'title' => 'Achievements',
+                'link' => route('achievements.index'),
+            ],
+            [
                 'title' => 'Admin',
                 'link' => route('admin.index'),
                 'callback' => function() {

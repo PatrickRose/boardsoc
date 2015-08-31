@@ -32,4 +32,13 @@
             {!! link_to_route('library.create', 'Add game to library') !!}
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="page-header">
+                Achievement Admin
+            </h2>
+
+            {!! link_to_route('achievements.create', 'Add achievement') !!}
+        </div>
+    </div>
 @endsection

@@ -17,6 +17,13 @@
         @endif
     </h1>
 
+    <dl>
+        @foreach($user->achievements as $achievement)
+            <dt>{{ $achievement->name }}</dt>
+            <dd>{{ $achievement->description}}</dd>
+        @endforeach
+    </dl>
+
     @if($user->games->count())
 
         {!! $user->getTabbedGames() !!}

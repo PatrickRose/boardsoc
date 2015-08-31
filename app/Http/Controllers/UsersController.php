@@ -1,5 +1,6 @@
 <?php namespace BoardSoc\Http\Controllers;
 
+use BoardSoc\Achievement;
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Requests\ChangeDetails;
 use BoardSoc\Http\Requests\SignUpUsers;
@@ -80,9 +81,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::with('games')->findOrFail($id);
+        $user = User::with('games')->with('achievements')->findOrFail($id);
 
-        return View::make('users.show', compact('user'));
+        return View::make('users.show', compact('user', 'achievements'));
     }
 
     /**
@@ -127,5 +128,4 @@ class UsersController extends Controller
     {
         //
     }
-
 }

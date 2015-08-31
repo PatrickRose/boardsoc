@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Model;
  *         whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\BoardSoc\User
  *         whereUpdatedAt($value)
+ * @method static static findOrFail($id)
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -71,6 +72,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function games()
     {
         return $this->belongsToMany('BoardSoc\\BoardGameGeekGame');
+    }
+
+    public function achievements()
+    {
+        return $this->belongsToMany('BoardSoc\\Achievement');
     }
 
     public function getTabbedGames($currentUserID = null)
