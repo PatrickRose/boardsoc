@@ -1,4 +1,5 @@
-<?php namespace BoardSoc\Http\Controllers;
+<?php
+namespace BoardSoc\Http\Controllers;
 
 use BoardSoc\Achievement;
 use BoardSoc\Http\Requests;
@@ -55,10 +56,11 @@ class UsersController extends Controller
      */
     public function store(SignUpUsers $signUpUsers)
     {
-        $user = User::create($signUpUsers->all());
+        $user = new User($signUpUsers->all());
         $password = str_random(8);
-        $user->setPasswordAttribute($password);
+        $user->password = $password;
         $email = $user->email;
+        $user->save();
 
         \Flash::info('User created');
         \Mail::send(
@@ -66,7 +68,7 @@ class UsersController extends Controller
             ['password' => $password, 'email' => $email],
             function (Message $message) use($email) {
                 $message->to($email)
-                    ->subject('Welcome to BoardSoc');
+                        ->subject('Welcome to BoardSoc');
             }
         );
 
