@@ -65,7 +65,7 @@ class LibraryController extends Controller
     public function store(AddGameToLibrary $addGameToLibrary)
     {
         $game = $this->boardGameGeekRepository->get(
-            $addGameToLibrary->get('boardgamegeekid')
+            $addGameToLibrary->get('board_game_geek_game_id')
         );
 
         $libraryGame = new Game($addGameToLibrary->all());

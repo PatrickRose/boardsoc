@@ -21,10 +21,10 @@ class AddGameToLibrary extends Request {
 	 */
 	public function rules()
 	{
-		return [
-            'boardgamegeekid' => 'required',
-            'deposit' => 'required',
-		];
+	      return [
+		  'board_game_geek_game_id' => 'required',
+		  'deposit' => 'required',
+	      ];
 	}
 
 }
