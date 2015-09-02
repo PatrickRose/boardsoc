@@ -32,7 +32,7 @@ class LibraryCest extends UserTests
 
         $I->seeCurrentRouteIs('library.create');
 
-        $I->submitForm('form', ['boardgamegeekid' => 1, 'deposit' => 3]);
+        $I->submitForm('form', ['board_game_geek_game_id' => 1, 'deposit' => 3]);
 
         $I->see('Game added to library');
         $I->seeCurrentRouteIs('admin.index');

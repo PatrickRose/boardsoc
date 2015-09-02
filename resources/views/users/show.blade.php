@@ -26,7 +26,7 @@
 
     @if($user->games->count())
 
-        {!! $user->getTabbedGames() !!}
+        {!! $user->getTabbedGames(Auth::user() ? Auth::user()->id : null) !!}
 
     @else
         <div class="alert alert-info">
