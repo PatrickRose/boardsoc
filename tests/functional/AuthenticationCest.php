@@ -69,6 +69,16 @@ class AuthenticationCest extends UserTests
             'name' => 'Jack Doe',
             'email' => 'pjr0911025@googlemail.com'
         ]);
+        $I->dontSeeRecord('users', [
+            'name' => 'Jack Doe',
+            'email' => 'pjr0911025@googlemail.com',
+            'password' => null,
+        ]);
+        $I->dontSeeRecord('users', [
+            'name' => 'Jack Doe',
+            'email' => 'pjr0911025@googlemail.com',
+            'password' => '',
+        ]);
     }
 
     public function getAskedToLogIn(FunctionalTester $I)

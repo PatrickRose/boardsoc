@@ -43,6 +43,7 @@ Route::get(
 Route::resource('library', 'LibraryController');
 Route::resource('admin', 'AdminController');
 Route::controller('auth', 'SessionsController');
+Route::controller('password', 'PasswordController');
 Route::resource('users', 'UsersController');
 
 Route::get(

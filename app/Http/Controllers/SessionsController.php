@@ -1,4 +1,5 @@
-<?php namespace BoardSoc\Http\Controllers;
+<?php
+namespace BoardSoc\Http\Controllers;
 
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
@@ -6,11 +7,13 @@ use BoardSoc\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class SessionsController extends Controller
 {
 
     use AuthenticatesAndRegistersUsers;
+
 
     protected $redirectPath = '/';
 
