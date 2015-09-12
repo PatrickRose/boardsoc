@@ -108,4 +108,21 @@ class UserGamesCest extends UserTests
             ]
         );
     }
+
+    public function cantAddInvalidGames(FunctionalTester $I)
+    {
+        $I->amOnRoute('users.games.create', ['users' => $this->user]);
+
+        $I->fillField('board_game_geek_id[0]', 'foo');
+        $I->click('Add game to library');
+
+        $I->dontsee('added to your collection');
+        $I->dontSeeRecord(
+            'board_game_geek_game_user',
+            [
+                'board_game_geek_game_id' => 0,
+                'user_id' => $this->user->id,
+            ]
+        );
+    }
 }
