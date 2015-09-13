@@ -26,7 +26,29 @@
 
     @if($user->games->count())
 
-        {!! $user->getTabbedGames(Auth::user() ? Auth::user()->id : null) !!}
+        @foreach($user->games->chunk(3) as $row)
+	  <div class="row">
+
+	    @foreach($row as $game)
+	      <div class="col-md-4">
+		<h3>{{ $game->name }}</h3>
+                <img src="{{ $game->image }}" width="100%">
+		<div class="row" style='margin-top: 5px'>
+
+		@if($user->id == Auth::id())
+                    {!! link_to_route(
+                            'users.games.delete',
+                            "Remove \"{$game->name}\"",
+                            ['users' => $user->id, 'games' => $game->id],
+                            ['class' => 'btn btn-default btn-block']
+                        )
+                    !!}
+		@endif
+		</div>
+	      </div>
+	    @endforeach
+	  </div>
+	@endforeach
 
     @else
         <div class="alert alert-info">

@@ -1,4 +1,5 @@
-<?php namespace BoardSoc\Http\Controllers;
+<?php
+namespace BoardSoc\Http\Controllers;
 
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
@@ -24,11 +25,11 @@ class GamesController extends Controller {
      * @param $searchTerm
      * @return Response
      */
-	public function search($searchTerm)
-	{
-		$games = $this->boardGameGeekRepository->search($searchTerm);
+    public function search($searchTerm)
+    {
+        $games = $this->boardGameGeekRepository->search($searchTerm);
 
         return $games->toJson();
-	}
+    }
 
 }
