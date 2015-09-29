@@ -14,7 +14,7 @@
                 'link' => route('home'),
             ],
             [
-                'title' => 'About',
+                'title' => 'About/Contact',
                 'link' => route('about'),
             ],
             [

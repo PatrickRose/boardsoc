@@ -20,6 +20,24 @@
         to various pubs and shops in Sheffield.
     </p>
 
+    <p>
+        If you want to know more about the society, please feel free to send us an
+	email or join our Facebook.
+    </p>
+
+    <dl class="dl-horizontal">
+        <dt>Facebook</dt>
+        <dd>
+            <a href="https://www.facebook.com/groups/419413234788703/">
+		Sheffield CardBoardSoc
+	    </a>
+        </dd>
+	<dt>Email</dt>
+	<dd>
+	    <a href="mailto:boardsoc@sheffield.ac.uk">boardsoc@sheffield.ac.uk</a>
+	</dd>
+    </dl>
+
     <h2>Join The Mailing List</h2>
 
     <!-- Begin MailChimp Signup Form -->
