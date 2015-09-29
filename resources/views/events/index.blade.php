@@ -26,7 +26,7 @@
                     </h2>
 
                     <p>
-                        {{ $event->getFirstParagraph() }}}
+                        {{ $event->getFirstParagraph() }}
                     </p>
                     {!!
                         link_to_route(

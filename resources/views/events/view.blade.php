@@ -9,7 +9,7 @@
     <h1 class="page-header">
         {{ $event->name }}
         <small>
-            {{ $event->date }}
+	  {{ $event->date->format('l jS M') }}
         </small>
     </h1>
 
