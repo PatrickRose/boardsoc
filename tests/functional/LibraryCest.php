@@ -1,6 +1,5 @@
 <?php
 use BoardSoc\Game;
-use \FunctionalTester;
 
 require_once('UserTests.php');
 

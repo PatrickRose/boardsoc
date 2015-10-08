@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/UserTests.php';
 
-use \FunctionalTester;
-
 class AuthenticationCest extends UserTests
 {
 

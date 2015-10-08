@@ -4,7 +4,6 @@ require_once __DIR__ . '/UserTests.php';
 
 use BoardSoc\Event;
 use Faker\Factory;
-use \FunctionalTester;
 
 class EventsCest extends UserTests
 {

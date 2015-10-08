@@ -1,6 +1,5 @@
 <?php
 use BoardSoc\User;
-use \FunctionalTester;
 
 class UserDetailsCest
 {

@@ -1,6 +1,5 @@
 <?php
 use Faker\Factory;
-use \FunctionalTester;
 
 include_once 'UserTests.php';
 
