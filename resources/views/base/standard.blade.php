@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>@yield('title') - BoardSoc</title>
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
@@ -111,5 +112,11 @@
 
         {!! Helpers::js() !!}
         <script src="{{ asset('search.js') }}"></script>
+        <script src="{{ asset("js/retina-1.1.0.js") }}"></script>
+	<script src="{{ asset("js/jquery.hoverdir.js") }}"></script>
+	<script src="{{ asset("js/jquery.hoverex.min.js") }}"></script>
+	<script src="{{ asset("js/jquery.prettyPhoto.js") }}"></script>
+  	<script src="{{ asset("js/jquery.isotope.min.js") }}"></script>
+  	<script src="{{ asset("js/custom.js") }}"></script>
     </body>
 </html>

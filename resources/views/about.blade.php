@@ -17,82 +17,207 @@
 @endsection
 
 @section('content')
-    <p>
-        Sheffield University Board Gaming Society was set up in 2012 by
-        Patrick Rose because "he wasn't on a committee and that's just weird".
-    </p>
-
-    <p>
-        The society focus on playing board games in a social environment, using
-        various locations in the Sheffield city - ranging from the Union itself
-        to various pubs and shops in Sheffield.
-    </p>
-
-    <p>
-        If you want to know more about the society, please feel free to send us an
-        email or join our Facebook.
-    </p>
-
-    <dl class="dl-horizontal">
-        <dt>Facebook</dt>
-        <dd>
-            <a href="https://www.facebook.com/groups/419413234788703/">
-                Sheffield CardBoardSoc
-            </a>
-        </dd>
-        <dt>Email</dt>
-        <dd>
-            <a href="mailto:boardsoc@sheffield.ac.uk">boardsoc@sheffield.ac.uk</a>
-        </dd>
-    </dl>
-
-    <h2>Join The Mailing List</h2>
-
-    <!-- Begin MailChimp Signup Form -->
-    <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-    <div id="mc_embed_signup">
-        <form action="http://boardsoc.us6.list-manage.com/subscribe/post?u=247323eb50891566c8745585e&amp;id=e21d3ae3e8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <label for="mce-EMAIL">Subscribe to our mailing list</label>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </form>
-    </div>
-    <!--End mc_embed_signup-->
-
-    <div class="committee">
+    <div class="container mtb">
         <div class="row">
-            <div class="committee-president">
-                <h2 class="committee-name">
-                    Rob Sharp
-                    <small>President</small>
-                </h2>
+            <div class="col-lg-3">
+                <img class="img-responsive"
+                     src="{{ asset('img/logo.jpg') }}"
+                     alt="Card/BoardSoc logo" />
             </div>
-            <div class="committee-secretary">
-                <h2 class="committee-name">
-                    David Ray <small>Secretary</small>
-                </h2>
-            </div>
-            <div class="committee-treasurer">
-                <h2 class="committee-name">
-                    Jon Crossley <small>Treasurer</small>
-                </h2>
+            <div class="col-lg-9">
+                <p>
+                    Sheffield University Board Gaming Society was set up in 2012 by
+                    Patrick Rose because "he wasn't on a committee and that's just weird".
+                </p>
+
+                <p>
+                    The society focus on playing board games in a social environment, using
+                    various locations in the Sheffield city - ranging from the Union itself
+                    to various pubs and shops in Sheffield.
+                </p>
+
+                <p>
+                    Usually we meet in Interval every Saturday from 2pm until 6pm (though
+                    people might stay for longer) - but always keep an eye on our Facebook
+                    group or the {!! link_to_route('events.index', 'events page') !!}!
+                </p>
+
+                <p>
+                    If you want to know more about the society, please feel free to send us an
+                    email or join our Facebook group.
+                </p>
+
+                <dl class="dl-horizontal">
+                    <dt>Facebook</dt>
+                    <dd>
+                        <a href="https://www.facebook.com/groups/419413234788703/">
+                            Sheffield CardBoardSoc
+                        </a>
+                    </dd>
+                    <dt>Email</dt>
+                    <dd>
+                        <a href="mailto:boardsoc@sheffield.ac.uk">boardsoc@sheffield.ac.uk</a>
+                    </dd>
+                </dl>
+
+
+                <h2>Join The Mailing List</h2>
+
+                <!-- Begin MailChimp Signup Form -->
+                <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+                <div id="mc_embed_signup">
+                    <form action="http://boardsoc.us6.list-manage.com/subscribe/post?u=247323eb50891566c8745585e&amp;id=e21d3ae3e8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <label for="mce-EMAIL">Subscribe to our mailing list</label>
+                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
             </div>
         </div>
-        <div class="row">
-            <div class="committee-librarian">
-                <h2 class="committee-name">
-                    Matt Tomlinson <small>Librarian</small>
-                </h2>
+    </div>
+
+    <div class="container mtb committee">
+        <div class="row centered">
+            <div class="mobile-row">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-president.jpg') }}"
+                             alt="Rob Sharp">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/RobRob15"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Rob Sharp</h4>
+                    <h5 class="ctitle">President</h5>
+                    <p>
+                        Leader of the Card/Board gaming world. Well, the Sheffield
+                        section.
+                    </p>
+                    <div class="hline"></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-secretary.jpg') }}"
+                             alt="David Ray">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/david.ray.14811692"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>David Ray</h4>
+                    <h5 class="ctitle">Secretary</h5>
+                    <p>
+                        The president's right hand man. Totally not plotting his
+                        downfall. Honest.
+                    </p>
+                    <div class="hline"></div>
+                </div>
             </div>
-            <div class="committee-inclusions">
-                <h2 class="committee-name">
-                    Jo Conway <small>Inclusions</small>
-                </h2>
+            <div class="mobile-row">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-treasurer.jpg') }}"
+                             alt="Jon Crossley">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/amethyst.64"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Jon Crossley</h4>
+                    <h5 class="ctitle">Treasurer</h5>
+                    <p>
+                        The bean counter. Spends their nights lying on a bed
+                        of gold coins, like a dragon.
+                    </p>
+                    <div class="hline"></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-librarian.jpg') }}"
+                             alt="Matt Tomlinson">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/MatthewGeorgeTomlinson"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Matt Tomlinson</h4>
+                    <h5 class="ctitle">Librarian</h5>
+                    <p>
+                        Gate keeper of the cardboard joy that the society is dedicated
+                        to enjoying.
+                    </p>
+                    <div class="hline"></div>
+                </div>
             </div>
-            <div class="committee-web">
-                <h2 class="committee-name">
-                    Patrick Rose <small>Web Admin</small>
-                </h2>
+        </div>
+        <div class="mobile-row">
+            <div class="row centered">
+                <div class="col-sm-offset-3 col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-inclusions.jpg') }}"
+                             alt="Jo Conway">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/JoTheGeek"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Jo Conway</h4>
+                    <h5 class="ctitle">Inclusions</h5>
+                    <p>
+                        Makes sure that all is smooth, and all are happy. Let them know
+                        if there's any issues!
+                    </p>
+                    <div class="hline"></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-web.jpg') }}"
+                             alt="Patrick Rose">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/DrugCrazed"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Patrick Rose</h4>
+                    <h5 class="ctitle">Web Officer</h5>
+                    <p>
+                        Master of the web site. Lord of all the things you're currently
+                        looking at.
+                    </p>
+                    <div class="hline"></div>
+                </div>
             </div>
         </div>
     </div>

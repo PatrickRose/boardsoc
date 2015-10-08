@@ -14,44 +14,12 @@ class LoginLinkComposer
     public function compose(View $view)
     {
         if (\Auth::guest()) {
-            $loginForm = \Form::open([
-                'url' => url('auth/login'),
-                'class' => 'navbar-form navbar-right login',
-            ]);
-            $loginForm .= '<div class="form-group">';
-            $loginForm .= \Form::label('email',
-                'Email',
+            $loginForm = \Navigation::links([
                 [
-                    'class' => 'sr-only'
+                    'title' => 'Log in',
+                    'link' => url('auth/login')
                 ]
-            );
-            $loginForm .= \Form::email(
-                'email',
-                null,
-                [
-                    'placeholder' => 'Email...'
-                ]
-            );
-            $loginForm .= '</div>';
-
-            $loginForm .= '<div class="form-group">';
-            $loginForm .= \Form::label('password',
-                'Password',
-                [
-                    'class' => 'sr-only'
-                ]
-            );
-            $loginForm .= \Form::password(
-                'password',
-                null,
-                [
-                    'placeholder' => 'Password...'
-                ]
-            );
-            $loginForm .= '</div>';
-
-            $loginForm .= \Form::submit('Log in');
-            $loginForm .= \Form::close();
+            ])->withAttributes(['class' => 'navbar-right']);
         } else {
             $logoutLink = \Navigation::links([
                 [

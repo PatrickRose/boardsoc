@@ -9024,7 +9024,6 @@ a:focus {
 ################################################################# */
 #headerwrap {
   background-color: #00b3fe;
-  min-height: 550px;
   padding-top: 100px;
   padding-bottom: 0px;
   text-align: center;
@@ -9236,91 +9235,36 @@ label,
 .checkbox label {
   font-weight: 300;
 }
-.committee .committee-president,
-.committee .committee-treasurer,
-.committee .committee-secretary,
-.committee .committee-librarian,
-.committee .committee-web,
-.committee .committee-inclusions {
-  background-repeat: no-repeat;
-  position: relative;
-  min-height: 1px;
-  padding-left: 5px;
-  padding-right: 5px;
-  background-size: 100% 100%;
-  height: 390px;
-  border: solid grey 1px;
-}
-@media (min-width: 992px) {
-  .committee .committee-president,
-  .committee .committee-treasurer,
-  .committee .committee-secretary,
-  .committee .committee-librarian,
-  .committee .committee-web,
-  .committee .committee-inclusions {
-    float: left;
-    width: 33.33333333%;
+@media (min-width: 768px) {
+  .committee .row {
+    padding-bottom: 0.5em;
+  }
+  .committee .committee-member {
+    max-height: 157.5px;
+  }
+  .committee .committee-member img {
+    max-height: 157.5px;
   }
 }
-.committee .committee-president .committee-name,
-.committee .committee-treasurer .committee-name,
-.committee .committee-secretary .committee-name,
-.committee .committee-librarian .committee-name,
-.committee .committee-web .committee-name,
-.committee .committee-inclusions .committee-name {
-  margin-top: 340px;
-  background: rgba(255, 255, 255, 0.5);
-  color: black;
-  text-align: center;
-}
-.committee .committee-president .committee-name small,
-.committee .committee-treasurer .committee-name small,
-.committee .committee-secretary .committee-name small,
-.committee .committee-librarian .committee-name small,
-.committee .committee-web .committee-name small,
-.committee .committee-inclusions .committee-name small {
-  color: #1a1a1a;
-}
-@media (max-width: 991px) {
-  .committee .committee-president,
-  .committee .committee-treasurer,
-  .committee .committee-secretary,
-  .committee .committee-librarian,
-  .committee .committee-web,
-  .committee .committee-inclusions {
-    height: 500px;
+@media (max-width: 768px) {
+  .committee .col-xs-6 {
+    padding-bottom: 0.5em;
   }
-  .committee .committee-president .committee-name,
-  .committee .committee-treasurer .committee-name,
-  .committee .committee-secretary .committee-name,
-  .committee .committee-librarian .committee-name,
-  .committee .committee-web .committee-name,
-  .committee .committee-inclusions .committee-name {
-    margin-top: 450px;
+  .committee .committee-member {
+    max-height: 122.5px;
+  }
+  .committee .committee-member img {
+    max-height: 122.5px;
   }
 }
-.committee .committee-president {
-  background-image: url('/img/committee-president.jpg');
+.mobile-row {
+  display: inline;
 }
-.committee .committee-treasurer {
-  background-image: url('/img/committee-treasurer.jpg');
-}
-.committee .committee-secretary {
-  background-image: url('/img/committee-secretary.jpg');
-}
-@media (min-width: 992px) {
-  .committee .committee-secretary {
-    background-size: initial;
+@media (max-width: 768px) {
+  .mobile-row {
+    margin-left: -15px;
+    margin-right: -15px;
   }
-}
-.committee .committee-librarian {
-  background-image: url('/img/committee-librarian.jpg');
-}
-.committee .committee-web {
-  background-image: url('/img/committee-web.jpg');
-}
-.committee .committee-inclusions {
-  background-image: url('/img/committee-inclusions.jpg');
 }
 
 /*# sourceMappingURL=app.css.map */
