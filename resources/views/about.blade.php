@@ -4,11 +4,19 @@
     About
 @endsection
 
-@section('content')
-    <h1 class="page-header">
-        About BoardSoc
-    </h1>
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row" >
+                <h3>
+                    About BoardSoc
+                </h3>
+            </div>
+        </div>
+    </div>
+@endsection
 
+@section('content')
     <p>
         Sheffield University Board Gaming Society was set up in 2012 by
         Patrick Rose because "he wasn't on a committee and that's just weird".
@@ -22,20 +30,20 @@
 
     <p>
         If you want to know more about the society, please feel free to send us an
-	email or join our Facebook.
+        email or join our Facebook.
     </p>
 
     <dl class="dl-horizontal">
         <dt>Facebook</dt>
         <dd>
             <a href="https://www.facebook.com/groups/419413234788703/">
-		Sheffield CardBoardSoc
-	    </a>
+                Sheffield CardBoardSoc
+            </a>
         </dd>
-	<dt>Email</dt>
-	<dd>
-	    <a href="mailto:boardsoc@sheffield.ac.uk">boardsoc@sheffield.ac.uk</a>
-	</dd>
+        <dt>Email</dt>
+        <dd>
+            <a href="mailto:boardsoc@sheffield.ac.uk">boardsoc@sheffield.ac.uk</a>
+        </dd>
     </dl>
 
     <h2>Join The Mailing List</h2>
