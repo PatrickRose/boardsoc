@@ -13,6 +13,8 @@
 @import "prettyPhoto";
 @import "hoverex-all";
 
+@theme-colour: #9BD528;
+@theme-colour-text: darken(@theme-colour, 20%);
 /*      ################################################################
         1. GENERAL STRUCTURES
 ################################################################# */
@@ -60,11 +62,13 @@ a {
     -o-transition: background-color .4s linear, color .4s linear;
     -ms-transition: background-color .4s linear, color .4s linear;
     transition: background-color .4s linear, color .4s linear;
+    color: @theme-colour-text;
 }
 a:hover,
 a:focus {
     text-decoration: none;
     color:#01b2fe;
+    color: darken(@theme-colour-text, 20%);
 }
 
 ::-moz-selection  {
@@ -108,13 +112,13 @@ a:focus {
     }
 
     .navbar-nav > li > a:hover {
-        color: #00b3fe;
+        color: @theme-colour;
     }
 
     .navbar-nav > .active > a,
     .navbar-default .navbar-nav > .active > a:hover,
     .navbar-default .navbar-nav > .active > a:focus {
-        color: #00b3fe;
+        color: @theme-colour;
         background-color: transparent;
     }
 
@@ -124,12 +128,11 @@ a:focus {
 
 .dropdown-menu {
     background: #384452;
-}
-
-.dropdown-menu > li > a {
-    color: white;
-    font-weight: 700;
-    font-size: 12px;
+    > li > a {
+        color: white;
+        font-weight: 700;
+        font-size: 12px;
+    }
 }
 
 .btn-theme {
@@ -207,36 +210,32 @@ a:focus {
 ################################################################# */
 
 #headerwrap {
-    background-color: #00b3fe;
+    background-color: @theme-colour;
     padding-top: 100px;
     padding-bottom: 0px;
     text-align: center;
-}
-
-#headerwrap h3, h5 {
-    color: white;
-    font-weight: 400;
-}
-
-#headerwrap h1 {
-    color: white;
-    margin-bottom: 25px;
-}
-
-#headerwrap .img-responsive {
-    margin: 0 auto;
+    h3, h5 {
+        color: white;
+        font-weight: 400;
+    }
+    h1 {
+        color: white;
+        margin-bottom: 25px;
+    }
+    .img-responsive {
+        margin: 0 auto;
+    }
 }
 
 /* Services Wrap */
 #service {
     margin-top: 100px;
     margin-bottom: 80px;
-}
-
-#service i {
-    color: #00b3fe;
-    font-size: 60px;
-    padding: 15px;
+    i {
+        color: @theme-colour-text;
+        font-size: 60px;
+        padding: 15px;
+    }
 }
 
 /* Portfolio Wrap */
@@ -283,7 +282,7 @@ a:focus {
     height:100%;
     width:100%;
     background-color:#00b3fe;
-    background-color:rgba(0,179,254,.9);
+    background-color:fadeout(@theme-colour, 25%);
     text-align:center;
 }
 
@@ -338,26 +337,30 @@ a:focus {
     padding-top: 60px;
     padding-bottom: 60px;
     background: #384452;
-}
-
-#footerwrap {
+    
     p, address {
         color: #bfc9d3;
     }
-}
+    h4 {
+        color: white;
+    }
+    i {
+        font-size: 30px;
+        color: #bfc9d3;
+        padding-right: 25px;
 
-#footerwrap h4 {
-    color: white;
-}
+        &:hover {
+            color: @theme-colour;
+        }
+    }
+    a {
+        color: @theme-colour;
 
-#footerwrap i {
-    font-size: 30px;
-    color: #bfc9d3;
-    padding-right: 25px;
-}
-
-#footerwrap i:hover {
-    color: #00b3fe
+        &:hover,
+        &:focus {
+            color: @theme-colour-text;
+        }
+    }
 }
 
 /*      ################################################################
@@ -366,20 +369,19 @@ a:focus {
 /* General Tweaks */
 
 #blue {
-    background: #00b3fe;
+    background: @theme-colour;
     margin-top: 60px;
     margin-bottom: 60px;
     padding-top: 25px;
     padding-bottom: 25px;
-}
-
-#blue h3 {
-    color: white;
-    margin-left: 15px;
+    h3 {
+        color: white;
+        margin-left: 15px;
+    }
 }
 
 .ctitle {
-    color: #00b3fe;
+    color: @theme-colour-text;
     font-weight: 700;
     margin-bottom: 15px;
 }

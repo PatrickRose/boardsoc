@@ -8898,11 +8898,13 @@ a {
   margin: 0;
   text-decoration: none;
   transition: background-color 0.4s linear, color 0.4s linear;
+  color: #5d7f18;
 }
 a:hover,
 a:focus {
   text-decoration: none;
   color: #01b2fe;
+  color: #1e2908;
 }
 ::-moz-selection {
   color: #fff;
@@ -8942,12 +8944,12 @@ a:focus {
   font-size: 12px;
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #00b3fe;
+  color: #9bd528;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-default .navbar-nav > .active > a:focus {
-  color: #00b3fe;
+  color: #9bd528;
   background-color: transparent;
 }
 .dropdown-menu {
@@ -9023,13 +9025,13 @@ a:focus {
         SITE WRAPS
 ################################################################# */
 #headerwrap {
-  background-color: #00b3fe;
+  background-color: #9bd528;
   padding-top: 100px;
   padding-bottom: 0px;
   text-align: center;
 }
 #headerwrap h3,
-h5 {
+#headerwrap h5 {
   color: white;
   font-weight: 400;
 }
@@ -9046,7 +9048,7 @@ h5 {
   margin-bottom: 80px;
 }
 #service i {
-  color: #00b3fe;
+  color: #5d7f18;
   font-size: 60px;
   padding: 15px;
 }
@@ -9093,7 +9095,7 @@ h5 {
   height: 100%;
   width: 100%;
   background-color: #00b3fe;
-  background-color: rgba(0, 179, 254, 0.9);
+  background-color: rgba(155, 213, 40, 0.75);
   text-align: center;
 }
 /* Testimonials Wrap */
@@ -9148,14 +9150,21 @@ h5 {
   padding-right: 25px;
 }
 #footerwrap i:hover {
-  color: #00b3fe;
+  color: #9bd528;
+}
+#footerwrap a {
+  color: #9bd528;
+}
+#footerwrap a:hover,
+#footerwrap a:focus {
+  color: #5d7f18;
 }
 /*      ################################################################
         PAGE CONFIGURATIONS
 ################################################################# */
 /* General Tweaks */
 #blue {
-  background: #00b3fe;
+  background: #9bd528;
   margin-top: 60px;
   margin-bottom: 60px;
   padding-top: 25px;
@@ -9166,7 +9175,7 @@ h5 {
   margin-left: 15px;
 }
 .ctitle {
-  color: #00b3fe;
+  color: #5d7f18;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -9234,28 +9243,6 @@ body,
 label,
 .checkbox label {
   font-weight: 300;
-}
-@media (min-width: 768px) {
-  .committee .row {
-    padding-bottom: 0.5em;
-  }
-  .committee .committee-member {
-    max-height: 157.5px;
-  }
-  .committee .committee-member img {
-    max-height: 157.5px;
-  }
-}
-@media (max-width: 768px) {
-  .committee .col-xs-6 {
-    padding-bottom: 0.5em;
-  }
-  .committee .committee-member {
-    max-height: 122.5px;
-  }
-  .committee .committee-member img {
-    max-height: 122.5px;
-  }
 }
 .mobile-row {
   display: inline;
