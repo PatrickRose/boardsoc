@@ -4,35 +4,46 @@
     Create new Event
 @endsection
 
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>
+                    Create new event
+                </h3>
+            </div>
+        </div>
+    </div>
+@endsection
+
 @section('content')
-    <h1>
-        Create new event
-    </h1>
+    <div class="container mtb">
 
-    {!! Form::model($event, ['route' => 'events.store']) !!}
+        {!! Form::model($event, ['route' => 'events.store']) !!}
 
-    {!! ControlGroup::generate(
-        Form::label('name', 'Event name'),
-        Form::text('name')
-    ) !!}
+        {!! ControlGroup::generate(
+            Form::label('name', 'Event name'),
+            Form::text('name')
+        ) !!}
 
-    {!! ControlGroup::generate(
-        Form::label('date', 'Date'),
-        Form::date('date', \Carbon\Carbon::tomorrow()->format('Y-m-d'))
-    ) !!}
+        {!! ControlGroup::generate(
+            Form::label('date', 'Date'),
+            Form::date('date', \Carbon\Carbon::tomorrow()->format('Y-m-d'))
+        ) !!}
 
-    {!! ControlGroup::generate(
-        Form::label('details', 'Description'),
-        Form::textarea('details')
-    ) !!}
+        {!! ControlGroup::generate(
+            Form::label('details', 'Description'),
+            Form::textarea('details')
+        ) !!}
 
-    {!! ControlGroup::generate(
-        Form::label('facebook'),
-        Form::text('facebook'),
-        'This is the ID after the event: https://www.facebook.com/events/{value}'
-    ) !!}
+        {!! ControlGroup::generate(
+            Form::label('facebook'),
+            Form::text('facebook'),
+            'This is the ID after the event: https://www.facebook.com/events/{value}'
+        ) !!}
 
-    {!! Form::submit('Create Event') !!}
+        {!! Form::submit('Create Event') !!}
 
-    {!! Form::close() !!}
+        {!! Form::close() !!}
+    </div>
 @endsection

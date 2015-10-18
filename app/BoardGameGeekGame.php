@@ -22,6 +22,41 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BoardGameGeekGame extends Model {
 
-	public $incrementing = false;
+    public $incrementing = false;
+
+    public function getThumbnail()
+    {
+        $pathInfo = pathinfo($this->image);
+        if (!array_key_exists('extension', $pathInfo))
+        {
+            return $this->image;
+        }
+
+        return $pathInfo['dirname'] . '/' . $pathInfo['filename'] . '_t.' . $pathInfo['extension'];
+    }
+
+    public function getButtonName()
+    {
+        $buttonNames = explode(' ', htmlspecialchars($this->name));
+        $toReturn = '<span class="fa fa-ban"></span> Remove ';
+        $stringLength = 9;
+
+        foreach($buttonNames as $name)
+        {
+            $stringLength += strlen($name) + 1;
+            $toReturn .= $name;
+            if ($stringLength > 27)
+            {
+                $toReturn .= '<br />';
+                $stringLength = 0;
+            }
+            else
+            {
+                $toReturn .= ' ';
+            }
+        }
+
+        return $toReturn;
+    }
 
 }

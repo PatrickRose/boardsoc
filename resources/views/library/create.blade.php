@@ -4,42 +4,52 @@
     Add Game To Library
 @endsection
 
-@section('content')
-
-    <h1 class="page-header">
-        Add Game To Library
-    </h1>
-
-    <div class="row">
-        <div class="search-form">
-            <div class="results">
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>
+                    Add Game To Library
+                </h3>
             </div>
-            <input type="text" class="search">
-            <button class="submit btn btn-default"
-                    data-loading-text="Searching..."
-                    data-url="{{ route('games.search', ['search' => '']) }}"
-                    autocomplete="off">
-                <span class="glyphicon glyphicon-search" /> Search
-            </button>
         </div>
     </div>
+@endsection
 
-    {!! Form::open(['route' => 'library.store']) !!}
+@section('content')
 
-    {!! ControlGroup::generate(
-            Form::label('board_game_geek_game_id', 'Board Game Geek id'),
-        Form::number('board_game_geek_game_id')
-    ) !!}
+    <div class="container mtb">
 
-    {!! ControlGroup::generate(
-        Form::label('deposit', 'Deposit (in pounds)'),
-        Form::number('deposit')
-    ) !!}
+        <div class="row">
+            <div class="search-form">
+                <div class="results">
+                </div>
+                <input type="text" class="search">
+                <button class="submit btn btn-default"
+                        data-loading-text="Searching..."
+                        data-url="{{ route('games.search', ['search' => '']) }}"
+                        autocomplete="off">
+                    <span class="glyphicon glyphicon-search"/> Search
+                </button>
+            </div>
+        </div>
 
-    <div class="form-group">
-        {!! Form::submit('Save') !!}
+        {!! Form::open(['route' => 'library.store']) !!}
+
+        {!! ControlGroup::generate(
+                Form::label('board_game_geek_game_id', 'Board Game Geek id'),
+            Form::number('board_game_geek_game_id')
+        ) !!}
+
+        {!! ControlGroup::generate(
+            Form::label('deposit', 'Deposit (in pounds)'),
+            Form::number('deposit')
+        ) !!}
+
+        <div class="form-group">
+            {!! Form::submit('Save') !!}
+        </div>
+
+        {!! Form::close() !!}
     </div>
-
-    {!! Form::close() !!}
-
 @endsection

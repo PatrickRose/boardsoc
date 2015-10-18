@@ -4,22 +4,38 @@
     Add new Achievement
 @endsection
 
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>
+                    Add achievements
+                </h3>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
 @section('content')
 
-    {!! Form::open(['route' => 'achievements.store']) !!}
+    <div class="container mtb">
 
-    {!! ControlGroup::generate(
-        Form::label('name'),
-        Form::text('name')
-    ) !!}
+        {!! Form::open(['route' => 'achievements.store']) !!}
 
-    {!! ControlGroup::generate(
-        Form::label('description'),
-        Form::textarea('description')
-    ) !!}
+        {!! ControlGroup::generate(
+            Form::label('name'),
+            Form::text('name')
+        ) !!}
 
-    {!! Form::submit('Create') !!}
+        {!! ControlGroup::generate(
+            Form::label('description'),
+            Form::textarea('description')
+        ) !!}
 
-    {!! Form::close() !!}
+        {!! Form::submit('Create') !!}
 
+        {!! Form::close() !!}
+
+    </div>
 @endsection

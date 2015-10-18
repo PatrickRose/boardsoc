@@ -29,6 +29,7 @@ class LibraryController extends Controller
                 ]
             ]
         );
+        $this->middleware('auth', ['only' => ['loan']]);
         $this->boardGameGeekRepository = $boardGameGeekRepository;
     }
 

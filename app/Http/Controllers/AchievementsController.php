@@ -3,16 +3,13 @@ namespace BoardSoc\Http\Controllers;
 
 use BoardSoc\Achievement;
 use BoardSoc\Http\Requests;
-use BoardSoc\Http\Controllers\Controller;
-
 use BoardSoc\Http\Requests\CreateAchievement;
 use BoardSoc\User;
-use Bootstrapper\Accordion;
-use Illuminate\Http\Request;
-use Laracasts\Flash\Flash;
 use Illuminate\Mail\Message;
+use Laracasts\Flash\Flash;
 
-class AchievementsController extends Controller {
+class AchievementsController extends Controller
+{
 
     public function __construct()
     {
@@ -26,6 +23,7 @@ class AchievementsController extends Controller {
                 ]
             ]
         );
+        $this->middleware('auth', ['only' => ['claim']]);
     }
 
     /**
@@ -35,79 +33,20 @@ class AchievementsController extends Controller {
      */
     public function index()
     {
-        $allAchievements = Achievement::all();
-        $user = \Auth::user();
-
-        $sortedAchivements = [
-            'A' => [],
-            'B' => [],
-            'C' => [],
-            'D' => [],
-            'E' => [],
-            'F' => [],
-            'G' => [],
-            'H' => [],
-            'I' => [],
-            'J' => [],
-            'K' => [],
-            'L' => [],
-            'M' => [],
-            'N' => [],
-            'O' => [],
-            'P' => [],
-            'Q' => [],
-            'R' => [],
-            'S' => [],
-            'T' => [],
-            'U' => [],
-            'V' => [],
-            'W' => [],
-            'X' => [],
-            'Y' => [],
-            'Z' => [],
-            '0-9' => [],
-        ];
-
-        foreach ($allAchievements as $achievement) {
-            $name = strtoupper($achievement->name[0]);
-            if (str_contains('QWERTYUIOPLKJHGFDSAZXCVBNM', $name) === false) {
-                $name = '0-9';
-            }
-            $sortedAchivements[$name][] = $achievement;
+        $achievements = [];
+        /** @var \BoardSoc\Achievement $achievement */
+        foreach(Achievement::all() as $achievement)
+        {
+            $claim = route('achievements.claim', ['achievement' => $achievement]);
+            $achievements[] = [
+                'title' => $achievement->name,
+                'contents' => $achievement->description . "<p><a href='$claim' class='btn btn-default'><span class='fa fa-trophy'></span> Claim this achievement</a></p>",
+            ];
         }
 
-        $tabContents = [];
+        $accordion = \Accordion::withContents($achievements);
 
-        foreach ($sortedAchivements as $title => $achievements) {
-
-            $accordionContent = [];
-            foreach($achievements as $achievement) {
-                $content = $achievement->description;
-
-		$content .= link_to_route(
-		    'achievements.claim',
-		    "Claim '{$achievement->name}'",
-		    ['achievement' => $achievement->id],
-		    ['class' => 'btn btn-default']
-		);
-
-                $accordionContent[] = [
-                    'title' => $achievement->name,
-                    'contents' => $content,
-                ];
-            }
-
-
-            $content = count($accordionContent) ?
-                       \Accordion::withContents($accordionContent) :
-                       '<div class="alert alert-info">No achievements</div>';
-
-            $tabContents[] = compact('title', 'content');
-        }
-
-        $achievements = \Tabbable::withContents($tabContents);
-
-        return \View::make('achievements.index', compact('achievements'));
+        return \View::make('achievements.index', compact('accordion'));
     }
 
     /**
@@ -138,7 +77,7 @@ class AchievementsController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
@@ -149,7 +88,7 @@ class AchievementsController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
@@ -160,7 +99,7 @@ class AchievementsController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function update($id)
@@ -171,7 +110,7 @@ class AchievementsController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)
@@ -192,22 +131,22 @@ class AchievementsController extends Controller {
     public function claim($achievement)
     {
         $achievementModel = Achievement::findOrFail($achievement);
-	$user = \Auth::user();
-	$committeeUsers = User::whereIsCommittee(1)->get(['email']);
+        $user = \Auth::user();
+        $committeeUsers = User::whereIsCommittee(1)->get(['email']);
 
-	foreach($committeeUsers as $committeeUser) {
-	    \Mail::send(
-		['text' => 'mail/claim'],
-		['achievement' => $achievementModel, 'user' => $user],
-		function (Message $message) use ($committeeUser) {
-		    $message->to($committeeUser->email)
-			    ->subject('Achievement claim');
-		}
-	    );
-	}
+        foreach ($committeeUsers as $committeeUser) {
+            \Mail::send(
+                ['text' => 'mail/claim'],
+                ['achievement' => $achievementModel, 'user' => $user],
+                function (Message $message) use ($committeeUser) {
+                    $message->to($committeeUser->email)
+                        ->subject('Achievement claim');
+                }
+            );
+        }
 
-	\Flash::info("Request to claim '{$achievementModel->name}' sent");
-	return \Redirect::back();
+        \Flash::info("Request to claim '{$achievementModel->name}' sent");
+        return \Redirect::back();
     }
 
 }

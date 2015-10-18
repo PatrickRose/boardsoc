@@ -4,8 +4,18 @@
     Login
 @endsection
 
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                Login
+            </div>
+        </div>
+    </div>
+@endsection
+
 @section('content')
-    <div class="container-fluid">
+    <div class="container mtb">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -53,7 +63,7 @@
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">Login</button>
 
-                                    <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+                                    <a class="btn btn-default" href="{{ url('/password/email') }}">Forgot Your Password?</a>
                                 </div>
                             </div>
                         </form>

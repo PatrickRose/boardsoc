@@ -25,7 +25,6 @@ class UsersController extends Controller
         $this->redirector = $redirector;
 
         $this->middleware('auth.admin', ['only' => ['create', 'store']]);
-
     }
 
     /**
