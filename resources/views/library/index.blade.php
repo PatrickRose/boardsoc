@@ -34,7 +34,7 @@
 
                 @foreach($games as $game)
 
-                    <div class="portfolio-item graphic-design">
+                    <div class="portfolio-item">
                         <div class="he-wrap tpl6">
                             <img src="{{ $game->boardGameGeekGame->getThumbnail() }}"
                                 alt="{{ $game->boardGameGeekGame->name }}">

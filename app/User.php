@@ -35,6 +35,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\BoardSoc\User
  *         whereUpdatedAt($value)
  * @method static static findOrFail($id)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\BoardSoc\\BoardGameGeekGame[] $games
+ * @property-read \Illuminate\Database\Eloquent\Collection|\BoardSoc\\Achievement[] $achievements
  */
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {

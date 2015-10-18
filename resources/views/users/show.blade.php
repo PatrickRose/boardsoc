@@ -4,56 +4,80 @@
     {{ $user->name }}
 @endsection
 
+@section('page-header')
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>
+                    {{ $user->name }}
+                    @if($user->id == Auth::id())
+                        <small>
+                            {!! link_to_route('users.games.create',
+                            "Add games to collection",
+                            ['users' =>  $user->id]) !!}
+                        </small>
+                    @endif
+                </h3>
+            </div>
+        </div>
+    </div>
+@endsection
+
 @section('content')
 
-    <h1 class="page-header">
-        {{ $user->name }}
-        @if($user->id == Auth::id())
-            <small>
-                {!! link_to_route('users.games.create',
-                "Add games to collection",
-                ['users' =>  $user->id]) !!}
-            </small>
+    <div class="container mtb">
+        @if($user->achievements->count())
+            <dl>
+                @foreach($user->achievements as $achievement)
+                    <dt>{{ $achievement->name }}</dt>
+                    <dd>{{ $achievement->description}}</dd>
+                @endforeach
+            </dl>
+        @else
+            <div class="alert alert-info">
+                {{ $user->name }} has not achievements
+            </div>
         @endif
-    </h1>
+    </div>
 
-    <dl>
-        @foreach($user->achievements as $achievement)
-            <dt>{{ $achievement->name }}</dt>
-            <dd>{{ $achievement->description}}</dd>
-        @endforeach
-    </dl>
+    <div id="portfoliowrap">
+        <div class="portfolio-centered">
+            <div class="recentitems portfolio">
+                @forelse($user->games as $game)
+                    <div class="portfolio-item">
+                        <div class="he-wrap tpl6">
+                            <img src="{{ $game->getThumbnail() }}"
+                                 alt="{{ $game->name }}">
 
-    @if($user->games->count())
+                            <div class="he-view">
+                                <div class="bg a0" data-animate="fadeIn">
+                                    <h3 class="a1" data-animate="fadeInDown">
+                                        {{ $game->name }}
+                                    </h3>
 
-        @foreach($user->games->chunk(3) as $row)
-	  <div class="row">
-
-	    @foreach($row as $game)
-	      <div class="col-md-4">
-		<h3>{{ $game->name }}</h3>
-                <img src="{{ $game->image }}" width="100%">
-		<div class="row" style='margin-top: 5px'>
-
-		@if($user->id == Auth::id())
-                    {!! link_to_route(
-                            'users.games.delete',
-                            "Remove \"{$game->name}\"",
-                            ['users' => $user->id, 'games' => $game->id],
-                            ['class' => 'btn btn-default btn-block']
-                        )
-                    !!}
-		@endif
-		</div>
-	      </div>
-	    @endforeach
-	  </div>
-	@endforeach
-
-    @else
-        <div class="alert alert-info">
-            {{ $user->name }} hasn't got any games apparently...
+                                    <p>
+                                        @if($user->id == Auth::id())
+                                            <a href="{{ route(
+                                                    'users.games.delete',
+                                                    ['users' => $user->id, 'games' => $game->id]
+                                                ) }}"
+                                               class="btn btn-default">
+                                                {!! $game->getButtonName() !!}
+                                            </a>
+                                        @endif
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- he view -->
+                        </div>
+                        <!-- he wrap -->
+                    </div><!-- end col-12 -->
+                @empty
+                    <div class="alert alert-info">
+                        {{ $user->name }} hasn't got any games apparently...
+                    </div>
+                @endforelse
+            </div>
         </div>
-    @endforelse
 
 @endsection

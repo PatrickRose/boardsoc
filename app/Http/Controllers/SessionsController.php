@@ -14,8 +14,9 @@ class SessionsController extends Controller
 
     use AuthenticatesAndRegistersUsers;
 
-
     protected $redirectPath = '/';
+
+    protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.

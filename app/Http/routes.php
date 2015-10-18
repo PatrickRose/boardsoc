@@ -72,9 +72,9 @@ Route::get(
 
 Route::resource('users.games', 'UserGamesController');
 Route::resource('achievements', 'AchievementsController');
-Route::get('achievements/{achievement}/give/{userid}', [
-    'as' => 'achievements.give',
-    'uses' => 'AchievementsController@give'
+Route::get('achievements/{achievement}/image', [
+    'as' => 'achievements.image',
+    'uses' => 'AchievementsController@image'
 ]);
 Route::get('achievement/{achievement}/claim', [
     'as' => 'achievements.claim',

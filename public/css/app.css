@@ -9257,14 +9257,39 @@ label,
   cursor: pointer;
 }
 .portfolio-item {
-  height: 150px;
+  height: 200px;
   text-align: center;
   border: 1px solid #eaf7d2;
 }
+.portfolio-item .he-wrap {
+  height: 200px;
+}
 .portfolio-item img {
-  height: 150px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
+}
+.achievements .portfolio-item {
+  height: 250px;
+  text-align: center;
+  border: 1px solid #eaf7d2;
+}
+.achievements .portfolio-item .he-wrap {
+  height: 250px;
+}
+.achievements .portfolio-item img {
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.achievements .portfolio-item h3 {
+  color: #5d7f18;
+}
+.committee .row {
+  padding-bottom: 5px;
+}
+.committee .committee-member img {
+  height: 250px;
 }
 
 /*# sourceMappingURL=app.css.map */

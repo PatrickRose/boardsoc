@@ -35,4 +35,28 @@ class BoardGameGeekGame extends Model {
         return $pathInfo['dirname'] . '/' . $pathInfo['filename'] . '_t.' . $pathInfo['extension'];
     }
 
+    public function getButtonName()
+    {
+        $buttonNames = explode(' ', htmlspecialchars($this->name));
+        $toReturn = '<span class="fa fa-ban"></span> Remove ';
+        $stringLength = 9;
+
+        foreach($buttonNames as $name)
+        {
+            $stringLength += strlen($name) + 1;
+            $toReturn .= $name;
+            if ($stringLength > 27)
+            {
+                $toReturn .= '<br />';
+                $stringLength = 0;
+            }
+            else
+            {
+                $toReturn .= ' ';
+            }
+        }
+
+        return $toReturn;
+    }
+
 }
