@@ -22,6 +22,17 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BoardGameGeekGame extends Model {
 
-	public $incrementing = false;
+    public $incrementing = false;
+
+    public function getThumbnail()
+    {
+        $pathInfo = pathinfo($this->image);
+        if (!array_key_exists('extension', $pathInfo))
+        {
+            return $this->image;
+        }
+
+        return $pathInfo['dirname'] . '/' . $pathInfo['filename'] . '_t.' . $pathInfo['extension'];
+    }
 
 }
