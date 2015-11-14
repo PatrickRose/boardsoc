@@ -93,6 +93,7 @@
                         <div class="hline-w"></div>
                         <p>
                             <a href="https://www.facebook.com/groups/419413234788703/" title="Facebook group"><i class="fa fa-facebook"></i></a>
+                            <a href="https://github.com/patrickrose/boardsoc" title="Github repository"><i class="fa fa-github"></i></a>
                             <a href="mailto:boardsoc@sheffield.ac.uk"><i class="fa fa-envelope"></i></a>
                                      </p>
                                      </div>
