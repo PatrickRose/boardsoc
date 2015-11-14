@@ -41,4 +41,9 @@ class Event extends Model {
         return explode("\n\n", $this->details);
     }
 
+    public function getDateAttribute($value)
+    {
+        return $this->asDateTime($value)->hour(14)->minute(0);
+    }
+
 }

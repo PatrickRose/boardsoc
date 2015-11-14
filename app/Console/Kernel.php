@@ -11,7 +11,7 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		'BoardSoc\Console\Commands\Inspire',
+		'BoardSoc\Console\Commands\MailEventDetails',
 	];
 
 	/**
@@ -22,8 +22,8 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected function schedule(Schedule $schedule)
 	{
-		$schedule->command('inspire')
-				 ->hourly();
+		$schedule->command('cron:events')
+				 ->daily();
 	}
 
 }

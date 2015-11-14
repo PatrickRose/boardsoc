@@ -30,7 +30,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::where('date', '>', Carbon::now())->paginate(12);
+        $events = Event::where('date', '>', Carbon::now())->orderby('date', 'ASC')->paginate(12);
 
         return \View::make('events.index')->with('events', $events);
     }
