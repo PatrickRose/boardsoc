@@ -48,9 +48,11 @@ class MailEventDetails extends Command
     {
         $date = Carbon::today()->addDays(3);
 
+        $this->info('Looking for events between ' . Carbon::today()->toFormattedDateString() . ' and ' . $date->toFormattedDateString());
+
         $users = User::all(['email', 'name']);
 
-        $events = Event::where('date', '<', $date)->orderBy('date', 'ASC')->get();
+        $events = Event::where('date', '>', Carbon::today())->where('date', '<', $date)->orderBy('date', 'ASC')->get();
 
         if ($events->count() == 0)
         {
