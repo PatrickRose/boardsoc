@@ -80,3 +80,7 @@ Route::get('achievement/{achievement}/claim', [
     'as' => 'achievements.claim',
     'uses' => 'AchievementsController@claim'
 ]);
+Route::get('achievement/{achievement}/give/{user}', [
+    'as' => 'achievements.give',
+    'uses' => 'AchievementsController@give'
+]);

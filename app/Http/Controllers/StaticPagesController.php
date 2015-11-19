@@ -17,7 +17,7 @@ class StaticPagesController extends Controller {
 	 */
 	public function index()
 	{
-        $events = Event::where('date', '>', Carbon::now())->limit(1)->get();
+        $events = Event::where('date', '>', Carbon::now())->orderBy('date')->limit(1)->get();
 
         return View::make('index')->with('events', $events);
 	}

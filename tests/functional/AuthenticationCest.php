@@ -59,22 +59,22 @@ class AuthenticationCest extends UserTests
         $I->amOnRoute('admin.index');
         $I->click('Sign someone up');
         $I->fillField('name', 'Jack Doe');
-        $I->fillField('email', 'pjr0911025@googlemail.com');
+        $I->fillField('email', 'testcodecept@example.com');
         $I->click('Sign them up');
 
         $I->see('User created');
         $I->seeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'pjr0911025@googlemail.com'
+            'email' => 'testcodecept@example.com'
         ]);
         $I->dontSeeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'pjr0911025@googlemail.com',
+            'email' => 'testcodecept@example.com',
             'password' => null,
         ]);
         $I->dontSeeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'pjr0911025@googlemail.com',
+            'email' => 'testcodecept@example.com',
             'password' => '',
         ]);
     }
@@ -101,7 +101,7 @@ class AuthenticationCest extends UserTests
         $I->dontSee('User created');
         $I->dontSeeRecord('users', [
             'name' => 'Jack Doe',
-            'email' => 'pjr0911025@googlemail.com'
+            'email' => 'testcodecept@example.com'
         ]);
     }
 
@@ -111,20 +111,6 @@ class AuthenticationCest extends UserTests
 
         $I->amOnRoute('users.create');
         $I->seeCurrentUrlEquals('');
-    }
-
-    public function loginFromTheMainPage(FunctionalTester $I)
-    {
-        $I->am('a committee member');
-        $I->amGoingTo('log in');
-        $I->lookForwardTo('logging in');
-
-        $I->amOnRoute('home');
-        $I->submitForm('.login', [
-            'email' => $this->committeeUser->email,
-            'password' => 'admin'
-        ]);
-        $I->seeAuthentication();
     }
 
     public function logoutFromAnyPage(FunctionalTester $I)

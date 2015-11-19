@@ -17,7 +17,7 @@ class NavigationLinksCest
 
     public function accessTheHomePageUsingTheBrand(FunctionalTester $I)
     {
-        $I->click('BoardSoc');
+        $I->click('Card/BoardSoc');
 
         $I->canSeeCurrentUrlEquals('');
         $I->canSeeResponseCodeIs(200);
@@ -25,7 +25,7 @@ class NavigationLinksCest
 
     public function accessTheAboutPage(FunctionalTester $I)
     {
-        $I->click('About');
+        $I->click('About/Contact');
 
         $I->canSeeCurrentRouteIs('about');
         $I->canSeeResponseCodeIs(200);

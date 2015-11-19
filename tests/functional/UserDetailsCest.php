@@ -42,7 +42,8 @@ class UserDetailsCest
         ]);
 
         $I->click('Log Out');
-        $I->submitForm('.login', [
+        $I->amOnPage('/auth/login');
+        $I->submitForm('.form-horizontal', [
             'email' => $this->user->email,
             'password' => 'FooBar'
         ]);

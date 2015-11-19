@@ -86,7 +86,7 @@ class UserGamesCest extends UserTests
         );
 
         $I->amOnRoute('users.show', ['users' => $this->user->id]);
-        $I->click('Remove "Die Macher"');
+        $I->click('Remove Die Macher');
 
         $I->dontSee($games[0]->name);
         $I->see($games[1]->name);
