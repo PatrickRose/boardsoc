@@ -55,6 +55,7 @@ class UsersController extends Controller
      */
     public function store(SignUpUsers $signUpUsers)
     {
+        
         $user = new User($signUpUsers->all());
         $password = str_random(8);
         $user->password = $password;

@@ -1,7 +1,5 @@
 <?php namespace BoardSoc\Services;
 
-use BoardSoc\User;
-use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract {

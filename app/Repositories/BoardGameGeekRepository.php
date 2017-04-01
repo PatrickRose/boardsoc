@@ -117,8 +117,13 @@ class BoardGameGeekRepository
         $req = $this->client->get(self::BOARD_GAME_URL . implode(',', $ids));
         $req->getQuery()->set('versions', '1');
 
-        $res = $req->send();
-        $xml = $res->xml();
+	    try {
+		    $res = $req->send();
+		    $xml = $res->xml();
+	    }
+	    catch (\Guzzle\Http\Exception\ClientErrorResponseException $ex) {
+		    $xml = simplexml_load_string('<boardgames />');
+	    }
 
         foreach ($xml->boardgame as $boardGame)
         {
