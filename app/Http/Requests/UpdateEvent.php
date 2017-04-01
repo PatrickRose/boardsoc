@@ -2,6 +2,7 @@
 
 use Auth;
 use BoardSoc\Http\Requests\Request;
+use Carbon\Carbon;
 
 class UpdateEvent extends Request {
 
@@ -22,14 +23,14 @@ class UpdateEvent extends Request {
 	 */
 	public function rules()
 	{
-        $id = \Input::get('event');
+		$id = \Request::route('events');
 
-        return [
-            'name' => 'required',
-            'date' => 'required|after:' . Carbon::now(),
-            'details' => 'required',
-            'facebook' => 'required|unique:events,facebook,' . $id
-        ];
+		return [
+			'name' => 'required',
+				'date' => 'required|after:' . Carbon::now(),
+				'details' => 'required',
+				'facebook' => 'required|unique:events,facebook,' . $id . ',id'
+		];
 	}
 
 }

@@ -55,14 +55,17 @@ class UserGamesController extends Controller {
 		$bggIds = $userGamesAdd->get('board_game_geek_id');
 
 		$games = $this->boardGameGeekRepository->getMany($bggIds);
-		$user = Auth::user();
-		$user->games()->attach($bggIds);
 
-		foreach($games as $game)
-		{
-			\Flash::success(
-				sprintf('"%s" added to your collection', $game->name)
-			);
+		if ($games->count() > 0) {
+			$user = Auth::user();
+			$user->games()->attach($bggIds);
+
+			foreach($games as $game)
+			{
+				\Flash::success(
+					sprintf('"%s" added to your collection', $game->name)
+				);
+			}
 		}
 
 		return Redirect::back();

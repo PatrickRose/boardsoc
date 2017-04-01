@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+	'env' => env('APP_ENV', 'production'),
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
@@ -113,12 +113,9 @@ return [
 		/*
 		 * Laravel Framework Service Providers...
 		 */
-		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
-		'Illuminate\Bus\BusServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
-		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 		'Illuminate\Encryption\EncryptionServiceProvider',
@@ -141,7 +138,6 @@ return [
 		 * Application Service Providers...
 		 */
 		'BoardSoc\Providers\AppServiceProvider',
-		'BoardSoc\Providers\BusServiceProvider',
 		'BoardSoc\Providers\ConfigServiceProvider',
 		'BoardSoc\Providers\EventServiceProvider',
 		'BoardSoc\Providers\RouteServiceProvider',

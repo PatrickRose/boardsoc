@@ -1,7 +1,7 @@
 <?php namespace BoardSoc\Http\Middleware;
 
 use Closure;
-use Illuminate\Auth\Guard;
+use Illuminate\Contracts\Auth\Guard;
 use Laracasts\Flash\FlashNotifier;
 
 class AuthenticateAdmin

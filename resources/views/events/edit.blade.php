@@ -9,7 +9,7 @@
         Edit event
     </h1>
 
-    {!! Form::model($event, ['route' => ['events.update', $event->id]]) !!}
+    {!! Form::model($event, ['route' => ['events.update', $event->id], 'method' => 'patch']) !!}
 
     {!! ControlGroup::generate(
         Form::label('name', 'Event name'),
