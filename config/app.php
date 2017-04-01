@@ -125,7 +125,7 @@ return [
 		'Illuminate\Filesystem\FilesystemServiceProvider',
 		'Illuminate\Foundation\Providers\FoundationServiceProvider',
 		'Illuminate\Hashing\HashServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
         'Illuminate\Mail\MailServiceProvider',
 		'Illuminate\Pagination\PaginationServiceProvider',
 		'Illuminate\Pipeline\PipelineServiceProvider',
@@ -136,7 +136,7 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-
+			'Illuminate\Broadcasting\BroadcastServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
