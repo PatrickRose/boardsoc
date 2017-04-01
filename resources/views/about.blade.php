@@ -217,7 +217,7 @@
                     </p>
                     <div class="hline"></div>
                 </div>
-                <div class="col-sm-3 col-xs-offset-3 col-xs-6">
+                <div class="col-sm-3 col-xs-6">
                     <div class="he-wrap tpl6 committee-member">
                         <img src="{{ asset('img/committee-web.jpg') }}"
                              alt="Patrick Rose">
