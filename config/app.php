@@ -137,6 +137,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 			'Illuminate\Broadcasting\BroadcastServiceProvider',
+			Laravel\Tinker\TinkerServiceProvider::class,
 		/*
 		 * Application Service Providers...
 		 */
