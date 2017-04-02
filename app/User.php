@@ -1,5 +1,6 @@
 <?php namespace BoardSoc;
 
+use Illuminate\Support\Str;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -66,10 +67,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $hidden = ['password', 'remember_token'];
 
     public function setPasswordAttribute($password)
-    {
-        if ($password != '') {
-            $this->attributes['password'] = \Hash::make($password);
-        }
+	{
+		if ($password != '')
+		{
+			if (\Hash::needsRehash($password)) {
+				$password = \Hash::make($password);
+			}
+			$this->attributes['password'] = $password;
+		}
     }
 
     public function games()

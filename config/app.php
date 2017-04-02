@@ -138,6 +138,8 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 			'Illuminate\Broadcasting\BroadcastServiceProvider',
 			Laravel\Tinker\TinkerServiceProvider::class,
+			'Illuminate\Notifications\NotificationServiceProvider',
+			'Illuminate\Bus\BusServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -222,6 +224,7 @@ return [
         'Table' => 'Bootstrapper\Facades\Table',
         'Thumbnail' => 'Bootstrapper\Facades\Thumbnail',
 
-        'Flash' => 'Laracasts\Flash\Flash',
+			'Flash' => 'Laracasts\Flash\Flash',
+			'Notification' => Illuminate\Support\Facades\Notification::class
     ]
 ];
