@@ -42,7 +42,7 @@ class UserDetailsCest
         ]);
 
         $I->click('Log Out');
-        $I->amOnPage('/auth/login');
+        $I->amOnPage('/login');
         $I->submitForm('.form-horizontal', [
             'email' => $this->user->email,
             'password' => 'FooBar'

@@ -12,7 +12,7 @@ class FunctionalHelper extends \Codeception\Module
         /** @var Laravel5 $laravel5 */
         $laravel5 = $this->getModule('Laravel5');
 
-        $laravel5->seeCurrentUrlEquals('/auth/login');
+        $laravel5->seeCurrentUrlEquals('/login');
     }
 
     public function dontSeeIAmAskedToLogIn()
@@ -20,7 +20,7 @@ class FunctionalHelper extends \Codeception\Module
         /** @var Laravel5 $laravel5 */
         $laravel5 = $this->getModule('Laravel5');
 
-        $laravel5->dontSeeCurrentUrlEquals('/auth/login');
+        $laravel5->dontSeeCurrentUrlEquals('/login');
     }
 
 }

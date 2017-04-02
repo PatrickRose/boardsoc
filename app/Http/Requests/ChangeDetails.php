@@ -11,7 +11,7 @@ class ChangeDetails extends Request {
 	 */
 	public function authorize()
 	{
-		return \Auth::user() && \Auth::user()->id == \Route::getCurrentRoute()->parameter('users');
+		return \Auth::user() && \Auth::user()->id == \Route::getCurrentRoute()->parameter('user');
 	}
 
 	/**
@@ -21,7 +21,7 @@ class ChangeDetails extends Request {
 	 */
 	public function rules()
 	{
-        $id = \Route::getCurrentRoute()->parameter('users');
+        $id = \Route::getCurrentRoute()->parameter('user');
 
 		return [
             'name' => 'required',

@@ -23,7 +23,7 @@ class UpdateEvent extends Request {
 	 */
 	public function rules()
 	{
-		$id = \Request::route('events');
+		$id = \Request::route('event');
 
 		return [
 			'name' => 'required',

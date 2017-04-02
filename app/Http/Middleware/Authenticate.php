@@ -47,7 +47,7 @@ class Authenticate {
 			else
 			{
                 $this->flashNotifier->info('You must log in to do that');
-				return redirect()->guest('auth/login');
+				return redirect()->guest('login');
 			}
 		}
 

@@ -1,6 +1,9 @@
 <?php
 
 return [
+	'name' => 'Sheffield BoardSoc',
+
+	
 	'env' => env('APP_ENV', 'production'),
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +83,7 @@ return [
 
 	'key' => env('APP_KEY', 'z8Xz0wD2lcoAzaZSBBN0RGyghwYeeZ5H'),
 
-	'cipher' => MCRYPT_RIJNDAEL_128,
+		'cipher' => 'AES-256-CBC',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -42,8 +42,8 @@ Route::get(
 );
 Route::resource('library', 'LibraryController');
 Route::resource('admin', 'AdminController');
-Route::controller('auth', 'SessionsController');
-Route::controller('password', 'PasswordController');
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::resource('users', 'UsersController');
 
 Route::get(
@@ -55,7 +55,7 @@ Route::get(
 );
 
 Route::post(
-    'users/{users}/games/boardgamegeek',
+    'users/{user}/games/boardgamegeek',
     [
         'as' => 'users.games.boardgamegeek',
         'uses' => 'UserGamesController@boardgamegeek'

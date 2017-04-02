@@ -17,7 +17,7 @@ class LoginLinkComposer
             $loginForm = \Navigation::links([
                 [
                     'title' => 'Log in',
-                    'link' => url('auth/login')
+                    'link' => url('login')
                 ]
             ])->withAttributes(['class' => 'navbar-right']);
         } else {
@@ -32,7 +32,7 @@ class LoginLinkComposer
                 ],
                 [
                     'title' => 'Log Out',
-                    'link' => url('auth/logout'),
+                    'link' => url('logout'),
                 ],
             ])->withAttributes(['class' => 'navbar-right']);
         }
