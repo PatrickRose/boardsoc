@@ -174,7 +174,7 @@
         </div>
         <div class="mobile-row">
             <div class="row centered">
-                    <div class="col-sm-offset-2 col-sm-3 col-xs-6">
+                    <div class="col-sm-3 col-xs-6">
 			    <div class="he-wrap tpl6 committee-member">
 				    <img src="{{ asset('img/committee-cardgames.jpg') }}"
 					    alt="Allie Mackintosh">
@@ -192,6 +192,27 @@
 			    <h5 class="ctitle">Card Games Officer</h5>
 			    <p>
 				    In charge of the other cardboard joy that we partake in, collectible card games.
+			    </p>
+			    <div class="hline"></div>
+                    </div>
+		    <div class="col-sm-3 col-xs-6">
+			    <div class="he-wrap tpl6 committee-member">
+				    <img src="{{ asset('img/committee-social.jpg') }}"
+					    alt="Jamie Duguid">
+				    <div class="he-view">
+					    <div class="bg a0" data-animate="fadeIn">
+						    <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+						    <a href="https://www.facebook.com/james.duguid.50"
+							    class="dmbutton a2" data-animate="fadeInUp">
+							    <i class="fa fa-facebook"></i>
+						    </a>
+					    </div><!-- he bg -->
+				    </div><!-- he view -->
+			    </div><!-- he wrap -->
+			    <h4>Jamie Duguid</h4>
+			    <h5 class="ctitle">Social Secretary</h5>
+			    <p>
+				    In charge of times we decide to partake in non-cardboard based joy
 			    </p>
 			    <div class="hline"></div>
                     </div>
