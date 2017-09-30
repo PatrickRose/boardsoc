@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>
-            @yield('title') - BoardSoc
+            @yield('title') - Card/BoardSoc
         </title>
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -82,7 +82,7 @@
                         <h4>About</h4>
                         <div class="hline-w"></div>
                         <p>
-                            BoardSoc is a student society of the University of
+                            Card/BoardSoc is a student society of the University of
                             Sheffield, focused on playing modern(ish) board games.
                             Interested in more information? Then
                             {!! link_to_route('about', 'read more here') !!}!

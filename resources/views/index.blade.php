@@ -14,7 +14,7 @@
           </h3>
           <h1>
             Welcome to the Sheffield University Board Gaming Society
-            (BoardSoc) Website
+            (Card/BoardSoc) Website
           </h1>
           <h5>
             Come along to our events
@@ -34,7 +34,7 @@
           </h4>
 
           <p>
-            BoardSoc is a student society of the University of Sheffield,
+            Card/BoardSoc is a student society of the University of Sheffield,
             focused on playing modern(ish) board games. Interested in
             more information? Then
             {!! link_to_route('about', 'read more here') !!}!
