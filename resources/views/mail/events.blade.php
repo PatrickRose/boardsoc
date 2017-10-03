@@ -5,7 +5,7 @@
 </p>
 
 <p>
-    Just to let you know that there are some events in the next 3 days!
+    Just to let you know that there are some events in the next few days!
 </p>
 
 <table>

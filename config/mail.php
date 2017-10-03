@@ -55,7 +55,7 @@ return [
 	*/
 
 	'from' => ['address' => 'boardsoc@sheffield.ac.uk',
-        'name' => 'Sheffield BoardSoc'],
+        'name' => 'Sheffield Card/BoardSoc'],
 
 	/*
 	|--------------------------------------------------------------------------

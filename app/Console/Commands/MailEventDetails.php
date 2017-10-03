@@ -46,13 +46,13 @@ class MailEventDetails extends Command
      */
     public function fire()
     {
-        $date = Carbon::today()->addDays(3);
+        $date = Carbon::today()->addDays(1);
 
         $this->info('Looking for events between ' . Carbon::today()->toFormattedDateString() . ' and ' . $date->toFormattedDateString());
 
         $users = User::all(['email', 'name']);
 
-        $events = Event::where('date', '>', Carbon::today())->where('date', '<', $date)->orderBy('date', 'ASC')->get();
+        $events = Event::where('date', '>=', Carbon::today())->where('date', '<=', $date)->orderBy('date', 'ASC')->get();
 
         if ($events->count() == 0)
         {
