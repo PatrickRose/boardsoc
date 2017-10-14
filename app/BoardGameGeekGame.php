@@ -24,6 +24,11 @@ class BoardGameGeekGame extends Model {
 
     public $incrementing = false;
 
+    public function users()
+    {
+        return $this->belongsToMany('BoardSoc\\User');
+    }
+
     public function getThumbnail()
     {
         $pathInfo = pathinfo($this->image);

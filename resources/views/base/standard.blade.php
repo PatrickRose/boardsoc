@@ -30,6 +30,10 @@
                               'link' => route('library.index'),
                           ],
                           [
+                              'title' => 'Member Games',
+                              'link' => route('games.index'),
+                          ],
+                          [
                               'title' => 'Achievements',
                               'link' => route('achievements.index'),
                           ],

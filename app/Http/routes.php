@@ -70,6 +70,14 @@ Route::get(
     ]
 );
 
+Route::get(
+    'games',
+    [
+        'as' => 'games.index',
+        'uses' => 'UserGamesController@allGames',
+    ]
+);
+
 Route::resource('users.games', 'UserGamesController');
 Route::resource('achievements', 'AchievementsController');
 Route::get('achievements/{achievement}/image', [

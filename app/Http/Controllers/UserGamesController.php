@@ -1,6 +1,7 @@
 <?php namespace BoardSoc\Http\Controllers;
 
 use Auth;
+use BoardSoc\BoardGameGeekGame;
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Controllers\Controller;
 
@@ -29,9 +30,11 @@ class UserGamesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function allGames()
 	{
-		//
+        $games = BoardGameGeekGame::has('users')->with('users')->get();
+
+	    return View::make('users.games.index', compact('games'));
 	}
 
 	/**
