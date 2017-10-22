@@ -46,7 +46,7 @@ class MailEventDetails extends Command
      */
     public function fire()
     {
-        $date = Carbon::today()->addDays(1);
+        $date = Carbon::today()->addDays(7);
 
         $this->info('Looking for events between ' . Carbon::today()->toFormattedDateString() . ' and ' . $date->toFormattedDateString());
 
