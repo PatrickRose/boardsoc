@@ -4,14 +4,23 @@
     {{ $event->name }}
 @endsection
 
-@section('content')
+@section('page-header')
+	<div id="blue">
+		<div class="container">
+			<div class="row">
+				<h3>
+					{{ $event->name }}
+					<small>
+						{{ $event->date->format('l jS M') }}
+					</small>
+				</h3>
+			</div>
+		</div>
+	</div>
+@endsection
 
-    <h1 class="page-header">
-        {{ $event->name }}
-        <small>
-	  {{ $event->date->format('l jS M') }}
-        </small>
-    </h1>
+@section('content')
+	<div class="container mtb">
 
     @if(Auth::check() && Auth::user()->is_committee)
         {!! link_to_route('events.edit', 'Edit Event', ['event' => $event]) !!}
@@ -26,5 +35,6 @@
     <a href="https://www.facebook.com/events/{{ $event->facebook }}">
         Hit attending on Facebook!
     </a>
+	</div>
 
 @endsection
