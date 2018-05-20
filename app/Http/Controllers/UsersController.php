@@ -66,7 +66,7 @@ class UsersController extends Controller
         \Flash::info('User created');
         \Mail::send(
             ['text' => 'mail/welcome'],
-            ['password' => $password, 'email' => $email],
+            ['password' => $password, 'email' => $email, 'route' => route('users.edit', compact('user'))],
             function (Message $message) use($email) {
                 $message->to($email)
                         ->subject('Welcome to BoardSoc');
