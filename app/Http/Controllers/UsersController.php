@@ -5,6 +5,7 @@ use BoardSoc\Achievement;
 use BoardSoc\Http\Requests;
 use BoardSoc\Http\Requests\ChangeDetails;
 use BoardSoc\Http\Requests\SignUpUsers;
+use BoardSoc\Http\Requests\RemoveAccount;
 use BoardSoc\User;
 use Illuminate\Mail\Message;
 use Illuminate\Routing\Redirector;
@@ -111,8 +112,8 @@ class UsersController extends Controller
     public function update($id, ChangeDetails $changeDetails)
     {
         $user = User::findOrFail($id);
-
         $user->fill($changeDetails->all());
+        $user->mayemail = $changeDetails->input('mayemail');
         $user->save();
 
         \Flash::success('Details updated');
@@ -126,8 +127,27 @@ class UsersController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($id, RemoveAccount $removeAccount)
     {
-        //
+        $success = false;
+        $user = User::findOrFail($id);
+
+        \DB::transaction(function () use (&$success, $user, $id) {
+            \BoardSoc\Loan::where('user_id', $id)->delete();
+
+            $user->delete();
+
+            $success = true;
+            return true;
+        });
+
+        // Log them out
+        if ($success)
+        {
+            return Redirect::route('logout');
+        }
+
+        \Flash::info('Failed to delete account - get in touch with a committee member so they can investigate it further');
+        return Redirect::route('users.edit', compact('user'));
     }
 }

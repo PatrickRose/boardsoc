@@ -72,4 +72,27 @@ class UserDetailsCest
         );
         $I->see('The password confirmation does not match.');
     }
+
+    public function iCanOptInToReceivingEmails(FunctionalTester $I)
+    {
+        $I->amOnRoute('users.edit', ['user' => $this->user]);
+        $I->checkOption('mayemail');
+        $I->submitForm('form', []);
+
+        $I->seeRecord(
+            'users',
+            [
+                'mayemail' => 1,
+                'email' => $this->user->email,
+            ]
+        );
+    }
+
+    public function iCanDeleteMyAccount(FunctionalTester $I)
+    {
+        $I->amOnRoute('users.edit', ['user' => $this->user]);
+        $I->submitForm('form.delete', [], 'Delete account');
+
+        $I->dontSeeRecord('users', ['email' => $this->user->email]);
+    }
 }

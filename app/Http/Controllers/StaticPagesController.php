@@ -31,4 +31,9 @@ class StaticPagesController extends Controller {
     {
         return View::make('about');
     }
+
+	public function privacy()
+	{
+		return View::make('privacy');
+	}
 }

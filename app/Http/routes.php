@@ -25,6 +25,13 @@ Route::get(
         'uses' => 'StaticPagesController@about'
     ]
 );
+Route::get(
+    'privacy',
+    [
+        'as' => 'privacy',
+        'uses' => 'StaticPagesController@privacy'
+    ]
+);
 Route::resource('events', 'EventsController');
 Route::get(
     'library/{library}/loan',

@@ -22,6 +22,10 @@
                               'link' => route('about'),
                           ],
                           [
+                              'title' => 'Privacy policy',
+                              'link' => route('privacy'),
+                          ],
+                          [
                               'title' => 'Events',
                               'link' => route('events.index'),
                           ],
