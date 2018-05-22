@@ -5,7 +5,7 @@
 @endsection
 
 @section('page-header')
-	<div id="blue">
+	<div id="headerwrap">
 		<div class="container">
 			<div class="row">
 				Reset password
