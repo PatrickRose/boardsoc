@@ -180,10 +180,10 @@
 					    alt="Role unfilled">
 				    <div class="he-view">
 					    <div class="bg a0" data-animate="fadeIn">
-						    <p class="a1" data-animate="fadeInDown">Interested in becoming this role?</p>
+						    <h3 class="a1" data-animate="fadeInDown">Interested in becoming this role?</h3>
 						    <a href="mailto:boardsoc@sheffield.ac.uk"
 							    class="dmbutton a2" data-animate="fadeInUp">
-							    <i class="fa fa-facebook">Contact us!</i>
+							    Contact us!</i>
 						    </a>
 						    <!-- <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
 								 <a href="https://www.facebook.com/AleshaWSAD"
