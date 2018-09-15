@@ -83,74 +83,6 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="he-wrap tpl6 committee-member">
                         <img src="{{ asset('img/committee-president.jpg') }}"
-                             alt="Ben Hawker">
-                        <div class="he-view">
-                            <div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-                                <a href="https://www.facebook.com/pipothy"
-                                   class="dmbutton a2" data-animate="fadeInUp">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </div><!-- he bg -->
-                        </div><!-- he view -->
-                    </div><!-- he wrap -->
-                    <h4>Ben Hawker</h4>
-                    <h5 class="ctitle">President</h5>
-                    <p>
-                        Leader of the Card/Board gaming world. Well, the Sheffield
-                        section.
-                    </p>
-                    <div class="hline"></div>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <div class="he-wrap tpl6 committee-member">
-                        <img src="{{ asset('img/committee-secretary.jpg') }}"
-                             alt="Jade Broomby">
-                        <div class="he-view">
-                            <div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-                                <a href="https://www.facebook.com/ade.broomby"
-                                   class="dmbutton a2" data-animate="fadeInUp">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </div><!-- he bg -->
-                        </div><!-- he view -->
-                    </div><!-- he wrap -->
-                    <h4>Jade Broomby </h4>
-                    <h5 class="ctitle">Secretary</h5>
-                    <p>
-                        The president's right hand person. Totally not plotting their
-                        downfall. Honest.
-                    </p>
-                    <div class="hline"></div>
-                </div>
-            </div>
-            <div class="mobile-row">
-                <div class="col-sm-3 col-xs-6">
-                    <div class="he-wrap tpl6 committee-member">
-                        <img src="{{ asset('img/committee-treasurer.jpg') }}"
-                             alt="Guro Fandrem">
-                        <div class="he-view">
-                            <div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-                                <a href="https://www.facebook.com/guro.fandrem"
-                                   class="dmbutton a2" data-animate="fadeInUp">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </div><!-- he bg -->
-                        </div><!-- he view -->
-                    </div><!-- he wrap -->
-                    <h4>Guro Fandrem</h4>
-                    <h5 class="ctitle">Treasurer</h5>
-                    <p>
-                        The bean counter. Spends their nights lying on a bed
-                        of gold coins, like a dragon.
-                    </p>
-                    <div class="hline"></div>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <div class="he-wrap tpl6 committee-member">
-                        <img src="{{ asset('img/committee-librarian.jpg') }}"
                              alt="Oliver Harris">
                         <div class="he-view">
                             <div class="bg a0" data-animate="fadeIn">
@@ -163,6 +95,74 @@
                         </div><!-- he view -->
                     </div><!-- he wrap -->
                     <h4>Oliver Harris</h4>
+                    <h5 class="ctitle">President</h5>
+                    <p>
+                        Leader of the Card/Board gaming world. Well, the Sheffield
+                        section.
+                    </p>
+                    <div class="hline"></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-secretary.jpg') }}"
+                             alt="Harry Elliot">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/harry.elliott.7146"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Harry Elliot</h4>
+                    <h5 class="ctitle">Secretary</h5>
+                    <p>
+                        The president's right hand person. Totally not plotting their
+                        downfall. Honest.
+                    </p>
+                    <div class="hline"></div>
+                </div>
+            </div>
+            <div class="mobile-row">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-treasurer.jpg') }}"
+                             alt="Josh Wood">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/josh.wood.90410"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Josh Wood</h4>
+                    <h5 class="ctitle">Treasurer</h5>
+                    <p>
+                        The bean counter. Spends their nights lying on a bed
+                        of gold coins, like a dragon.
+                    </p>
+                    <div class="hline"></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="he-wrap tpl6 committee-member">
+                        <img src="{{ asset('img/committee-librarian.jpg') }}"
+                             alt="Fred Gill">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+                                <a href="https://www.facebook.com/gillfr"
+                                   class="dmbutton a2" data-animate="fadeInUp">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div><!-- he bg -->
+                        </div><!-- he view -->
+                    </div><!-- he wrap -->
+                    <h4>Fred Gill</h4>
                     <h5 class="ctitle">Librarian</h5>
                     <p>
                         Gate keeper of the cardboard joy that the society is dedicated
@@ -177,18 +177,23 @@
                     <div class="col-sm-3 col-xs-6">
 			    <div class="he-wrap tpl6 committee-member">
 				    <img src="{{ asset('img/committee-cardgames.jpg') }}"
-					    alt="Allie Mackintosh">
+					    alt="Role unfilled">
 				    <div class="he-view">
 					    <div class="bg a0" data-animate="fadeIn">
-						    <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-						    <a href="https://www.facebook.com/AleshaWSAD"
+						    <p class="a1" data-animate="fadeInDown">Interested in becoming this role?</p>
+						    <a href="mailto:boardsoc@sheffield.ac.uk"
 							    class="dmbutton a2" data-animate="fadeInUp">
-							    <i class="fa fa-facebook"></i>
+							    <i class="fa fa-facebook">Contact us!</i>
 						    </a>
+						    <!-- <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+								 <a href="https://www.facebook.com/AleshaWSAD"
+							     class="dmbutton a2" data-animate="fadeInUp">
+							     <i class="fa fa-facebook"></i>
+								 </a> -->
 					    </div><!-- he bg -->
 				    </div><!-- he view -->
 			    </div><!-- he wrap -->
-			    <h4>Allie Mackintosh</h4>
+			    <h4>Role unfilled</h4>
 			    <h5 class="ctitle">Card Games Officer</h5>
 			    <p>
 				    In charge of the other cardboard joy that we partake in, collectible card games.
@@ -198,18 +203,18 @@
 		    <div class="col-sm-3 col-xs-6">
 			    <div class="he-wrap tpl6 committee-member">
 				    <img src="{{ asset('img/committee-social.jpg') }}"
-					    alt="Jamie Duguid">
+					    alt="Lucie Winship">
 				    <div class="he-view">
 					    <div class="bg a0" data-animate="fadeIn">
 						    <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-						    <a href="https://www.facebook.com/james.duguid.50"
+						    <a href="https://www.facebook.com/lucie.winship"
 							    class="dmbutton a2" data-animate="fadeInUp">
 							    <i class="fa fa-facebook"></i>
 						    </a>
 					    </div><!-- he bg -->
 				    </div><!-- he view -->
 			    </div><!-- he wrap -->
-			    <h4>Jamie Duguid</h4>
+			    <h4>Lucie Winship</h4>
 			    <h5 class="ctitle">Social Secretary</h5>
 			    <p>
 				    In charge of times we decide to partake in non-cardboard based joy
@@ -219,18 +224,18 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="he-wrap tpl6 committee-member">
                         <img src="{{ asset('img/committee-inclusions.jpg') }}"
-                             alt="Sophie Price">
+                             alt="Peter Fletcher">
                         <div class="he-view">
                             <div class="bg a0" data-animate="fadeIn">
                                 <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-                                <a href="https://www.facebook.com/sophie.price.524"
+                                <a href="https://www.facebook.com/peter.fletcher.7186"
                                    class="dmbutton a2" data-animate="fadeInUp">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </div><!-- he bg -->
                         </div><!-- he view -->
                     </div><!-- he wrap -->
-                    <h4>Sophie Price</h4>
+                    <h4>Peter Fletcher</h4>
                     <h5 class="ctitle">Inclusions</h5>
                     <p>
                         Makes sure that all is smooth, and all are happy. Let them know
