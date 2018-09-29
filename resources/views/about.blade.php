@@ -22,7 +22,7 @@
             <div class="col-lg-3">
                 <img class="img-responsive"
                      src="{{ asset('img/logo.jpg') }}"
-                     alt="Card/BoardSoc logo" />
+                     alt="BoardSoc logo" />
             </div>
             <div class="col-lg-9">
                 <p>
@@ -37,8 +37,8 @@
                 </p>
 
                 <p>
-                    Usually we meet in Interval every Saturday from 2pm until 6pm (though
-                    people might stay for longer) - but always keep an eye on our Facebook
+                    Usually we meet in the Student's union every Saturday from 2pm until 6pm (though
+                    people might stay for longer), and on a Wednesday from about 6pm - but always keep an eye on our Facebook
                     group or the {!! link_to_route('events.index', 'events page') !!}!
                 </p>
 
@@ -50,8 +50,8 @@
                 <dl class="dl-horizontal">
                     <dt>Facebook</dt>
                     <dd>
-                        <a href="https://www.facebook.com/groups/419413234788703/">
-                            Sheffield CardBoardSoc
+                        <a href="https://www.facebook.com/UoSBGS/">
+                            University of Sheffield Board Gaming Society
                         </a>
                     </dd>
                     <dt>Email</dt>
@@ -97,7 +97,7 @@
                     <h4>Oliver Harris</h4>
                     <h5 class="ctitle">President</h5>
                     <p>
-                        Leader of the Card/Board gaming world. Well, the Sheffield
+                        Leader of the Board gaming world. Well, the Sheffield
                         section.
                     </p>
                     <div class="hline"></div>
@@ -105,18 +105,18 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="he-wrap tpl6 committee-member">
                         <img src="{{ asset('img/committee-secretary.jpg') }}"
-                             alt="Harry Elliot">
+                             alt="Role unfilled">
                         <div class="he-view">
                             <div class="bg a0" data-animate="fadeIn">
                                 <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-                                <a href="https://www.facebook.com/harry.elliott.7146"
+                                <a href="#"
                                    class="dmbutton a2" data-animate="fadeInUp">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </div><!-- he bg -->
                         </div><!-- he view -->
                     </div><!-- he wrap -->
-                    <h4>Harry Elliot</h4>
+                    <h4>Role unfilled</h4>
                     <h5 class="ctitle">Secretary</h5>
                     <p>
                         The president's right hand person. Totally not plotting their
@@ -180,20 +180,15 @@
 					    alt="Role unfilled">
 				    <div class="he-view">
 					    <div class="bg a0" data-animate="fadeIn">
-						    <h3 class="a1" data-animate="fadeInDown">Interested in becoming this role?</h3>
-						    <a href="mailto:boardsoc@sheffield.ac.uk"
+						    <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+							<a href="https://www.facebook.com/nick.chapman.52035"
 							    class="dmbutton a2" data-animate="fadeInUp">
-							    Contact us!</i>
-						    </a>
-						    <!-- <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-								 <a href="https://www.facebook.com/AleshaWSAD"
-							     class="dmbutton a2" data-animate="fadeInUp">
-							     <i class="fa fa-facebook"></i>
-								 </a> -->
+							    <i class="fa fa-facebook"></i>
+							</a>
 					    </div><!-- he bg -->
 				    </div><!-- he view -->
 			    </div><!-- he wrap -->
-			    <h4>Role unfilled</h4>
+			    <h4>Nick Chapman</h4>
 			    <h5 class="ctitle">Card Games Officer</h5>
 			    <p>
 				    In charge of the other cardboard joy that we partake in, collectible card games.

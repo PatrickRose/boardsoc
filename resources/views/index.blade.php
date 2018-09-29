@@ -10,11 +10,11 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
           <h3>
-            Board Games, Card Games, Happyness!
+            Board Games, Card Games, Happiness!
           </h3>
           <h1>
             Welcome to the Sheffield University Board Gaming Society
-            (Card/BoardSoc) Website
+            (BoardSoc) Website
           </h1>
           <h5>
             Come along to our events
@@ -34,7 +34,7 @@
           </h4>
 
           <p>
-            Card/BoardSoc is a student society of the University of Sheffield,
+            BoardSoc is a student society of the University of Sheffield,
             focused on playing modern(ish) board games. Interested in
             more information? Then
             {!! link_to_route('about', 'read more here') !!}!
