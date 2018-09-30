@@ -50,7 +50,7 @@ class MailEventDetails extends Command
 
         $this->info('Looking for events between ' . Carbon::today()->toFormattedDateString() . ' and ' . $date->toFormattedDateString());
 
-        $users = User::where('mayemail', 1)->get(['email', 'name']);
+        $users = User::where('mayemail', 1)->get(['id', 'email', 'name']);
 
         $events = Event::where('date', '>=', Carbon::today())->where('date', '<=', $date)->orderBy('date', 'ASC')->get();
 

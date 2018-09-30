@@ -46,5 +46,9 @@
     @endforeach
     </tbody>
 </table>
+
+<p>
+	Don't want to recieve this email anymore? <a href="{{ route('users.edit', ['user' => $user]) }}">Then just edit your settings here </a>
+</p>
 </body>
 </html>

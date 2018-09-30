@@ -60,6 +60,7 @@ class UsersController extends Controller
         $user = new User($signUpUsers->all());
         $password = str_random(8);
         $user->password = $password;
+		$user->mayemail = true;
         $email = $user->email;
         $user->save();
 
