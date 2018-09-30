@@ -109,7 +109,7 @@
                                 <h4>Our Bunker</h4>
                                 <div class="hline-w"></div>
                                 <address>
-                                    Sheffield Card/BoardSoc<br />
+                                    Sheffield BoardSoc<br />
                                     University Of Sheffield<br />
                                     10-12 Brunswick Street<br />
                                     Sheffield, Eng S10 2FN
